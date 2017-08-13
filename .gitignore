@@ -1,0 +1,6 @@
+ENV
+*.pyc
+staticfiles
+db.sqlite3
+
+/Pipfile
