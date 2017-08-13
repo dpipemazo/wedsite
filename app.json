@@ -6,6 +6,9 @@
   "env": {
     "DISABLE_COLLECTSTATIC": {
       "required": true
+    },
+    "DJANGO_SECRET_KEY" : {
+      "required": true
     }
   },
   "formation": {
