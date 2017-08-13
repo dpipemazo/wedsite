@@ -25,7 +25,7 @@ SECRET_KEY = '1j9ye=h#7*)6u!f*z^mp4@h44&8vxyp4wr4+$w!(fp^)9xmc(+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['limitless-bastion-36877.herokuapp.com', 'jennanddan.love']
 
 
 # Application definition
