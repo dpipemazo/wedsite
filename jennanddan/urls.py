@@ -18,7 +18,7 @@ from django.contrib import admin
 
 urlpatterns = [
     # Wedding app will be at top-levels
-    url(r'^$', include('wedding.urls')),
+    url(r'', include('wedding.urls')),
 
     # Admin UI. For the happy couple.
     url(r'^admin/', admin.site.urls),
