@@ -6,4 +6,13 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the wedding index!")
+    context = {}
+    return render(request, 'wedding/index.html', context)
+
+def details(request):
+    context = {}
+    return render(request, 'wedding/details.html', context)
+
+def contact(request):
+    context = {}
+    return render(request, 'wedding/contact.html', context)
