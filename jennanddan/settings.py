@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'wedding'
+    'wedding',
+    'easy_maps',
 ]
 
 MIDDLEWARE = [
@@ -139,3 +140,7 @@ STATICFILES_DIRS = (
 # https://warehouse.python.org/project/whitenoise/
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+# For Easy Maps
+EASY_MAPS_GOOGLE_MAPS_API_KEY = os.environ.get('GOOGLE_MAPS_API_KEY')
+EASY_MAPS_CENTER = (-41.3, 32)

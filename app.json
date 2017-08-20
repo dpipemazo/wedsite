@@ -6,6 +6,9 @@
   "env": {
     "DJANGO_SECRET_KEY" : {
       "required": true
+    },
+    "GOOGLE_MAPS_API_KEY" : {
+      "required": true
     }
   },
   "formation": {
