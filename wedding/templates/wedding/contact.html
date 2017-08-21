@@ -42,18 +42,18 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">J&D</a>
+          <a class="navbar-brand" href="{% url 'index' %}">J&D</a>
         </div>
 
         <div id="myNavbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
             <!-- TODO link them to actual pages, not home page? -->
             <!-- TODO none of the links are on this page, so all appear "active" -->
-            <li class="active"><a href="/#story">Our Story</a></li>
-            <li class="active"><a href="/#wedding">The Wedding</a></li>
-            <li class="active"><a href="/#gifts">Gifts</a></li>
-            <li class="active"><a href="/#rsvp">RSVP</a></li>
-            <li class="active"><a href="/#faq">FAQ</a></li>
+            <li class="active"><a href="{% url 'index' %}/#story">Our Story</a></li>
+            <li class="active"><a href="{% url 'index' %}/#wedding">The Wedding</a></li>
+            <li class="active"><a href="{% url 'index' %}/#gifts">Gifts</a></li>
+            <li class="active"><a href="{% url 'index' %}/#rsvp">RSVP</a></li>
+            <li class="active"><a href="{% url 'index' %}/#faq">FAQ</a></li>
           </ul>
         </div>
       </div>
