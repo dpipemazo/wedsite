@@ -20,26 +20,21 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lobster" rel="stylesheet">
+
     <!-- Our own CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 
-    <!-- TODO move to CSS file-->
+    <!-- All CSS that requires static images -->
     <style>
-      body {
-        position: relative;
-      }
-      #story {padding-top:50px;height:500px}
-      #wedding {padding-top:50px;height:500px}
-      #gifts {padding-top:50px;height:500px}
-      #rsvp {padding-top:50px;height:500px}
-      #faq {padding-top:50px;height:500px}
-
-      .jumbotron{
-          background-image: url({% static 'images/landing_image.jpg' %});
+      .main_jumbotron {
+          background-image: url({% static 'images/landing_image_date.jpg' %});
           background-size: cover;
           height: 100vh;
       }
     </style>
+
   </head>
 {% endblock %}
 
@@ -79,11 +74,15 @@
 {% block landing_image %}
 <!-- Intro picture/info -->
 <section>
-  <div class="jumbotron">
+  <div class="main_jumbotron jumbotron">
     <div class="container-fluid text-center">
-      <h1>Jennifer Fang & Dan Pipe-Mazo</h1>
-      <p>2.18.2018<br>
-      La Venta Inn</p>
+      <h1 class="josephine">
+        Jennifer Fang & Dan Pipe-Mazo
+      </h1>
+      <p class="lobster">
+        2.18.2018<br>
+        La Venta Inn
+      </p>
     </div>
   </div>
 </section>

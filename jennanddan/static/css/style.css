@@ -1,0 +1,18 @@
+
+body {
+  position: relative;
+}
+
+#story {padding-top:50px;height:500px}
+#wedding {padding-top:50px;height:500px}
+#gifts {padding-top:50px;height:500px}
+#rsvp {padding-top:50px;height:500px}
+#faq {padding-top:50px;height:500px}
+
+.josephine {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.lobster {
+  font-family: 'Lobster', sans-serif;
+}
