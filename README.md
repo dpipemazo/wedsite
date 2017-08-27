@@ -34,6 +34,34 @@ Install the requirements:
 pip install -r requirements.txt
 ```
 
+Before you can get up and running, you'll need to set up a local `.env` file
+that contains all of the secret configurations. Since this is a public repo,
+all of the site's secrets, API keys, etc., are loaded using the `heroku config`
+functionality. When running locally, you'll need local copies of the config
+variables for it all to work.
+
+If you run `heroku config`, you should see a printout of all of the config
+variables:
+
+```
+$ heroku config
+=== limitless-bastion-36877 Config Vars
+DATABASE_URL:        XXXX
+DJANGO_SECRET_KEY:   YYYY
+GOOGLE_MAPS_API_KEY: ZZZZ
+...
+```
+
+Now, create a file in the top-level of the directoy, `.env`, and put all of the
+variables printed out from `heroku config` in the file in the following format.
+You can skip the DATABASE_URL parameter, since heroku takes care of that
+locally. As can be implied, **you should never commit and/or push this file**.
+```
+DJANGO_SECRET_KEY="YYYY"
+GOOGLE_MAPS_API_KEY="ZZZZ"
+...
+```
+
 And you should be able to get the site up and running locally!
 ```
 heroku local
