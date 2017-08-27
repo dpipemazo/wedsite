@@ -29,6 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '.herokuapp.com',
     'jennanddan.love',
+    'www.jennanddan.love',
     'localhost']
 
 
