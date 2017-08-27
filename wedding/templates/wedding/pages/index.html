@@ -1,0 +1,51 @@
+{% load static %}
+{% load easy_maps_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% block title %}
+  <head>
+
+    <!-- Page title -->
+    <title>Jenn and Dan's Wedding</title>
+
+    <!-- Code shared across all head blocks -->
+    {% include "wedding/blocks/head.html" %}
+
+    <!-- All CSS that requires static images -->
+    <style>
+      .main_jumbotron {
+          background-image: url({% static 'images/landing_image_date.jpg' %});
+          background-size: cover;
+          height: 100vh;
+          margin-bottom:0px;
+      }
+    </style>
+
+  </head>
+{% endblock %}
+
+<!-- Navbar code -->
+{% include "wedding/blocks/navbar.html" %}
+
+{% block landing_image %}
+<!-- Intro picture/info -->
+<section>
+  <div class="main_jumbotron jumbotron">
+    <div class="container-fluid text-center">
+      <h1 class="name-text">
+        Jennifer Fang & Dan Pipe-Mazo
+      </h1>
+      <p class="base-font venue-date-text">
+      02 · 18 · 18
+      </br>
+      La Venta Inn, Palos Verdes, CA
+      </p>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+<!-- Bootstrap code -->
+{% include "wedding/blocks/bootstrap.html" %}

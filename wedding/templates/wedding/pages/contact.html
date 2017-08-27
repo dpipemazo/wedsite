@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% block title %}
+  <head>
+
+    <!-- Page title -->
+    <title>Gifts</title>
+
+    <!-- Code shared across all head blocks -->
+    {% include "wedding/blocks/head.html" %}
+
+  </head>
+{% endblock %}
+
+<!-- Navbar code -->
+{% include "wedding/blocks/navbar.html" %}
+
+{% block contact %}
+<div id="contact" class="container-fluid text-center page-container">
+  <h1 class="page-header">Our fabulous team!</h1>
+
+  <!-- Row with wedding map and venue info -->
+  <div class="row">
+    <div class="col-sm-4 base-font text-center">
+      <h2> Maid of Honor </h2>
+      <h3> Lily Cordero </h3>
+      <p>
+      Went to school with the bride or don't recognize any of the
+      other names? Maid of Honor Lily can answer all your questions!
+      </p>
+    </div>
+    <div class="col-sm-4 base-font text-center">
+      <h2> Best Man </h2>
+      <h3> Ari Mazo </h3>
+      <p>
+      Related to the groom or a family friend? Best Man Ari is here for you!
+      </p>
+    </div>
+    <div class="col-sm-4 base-font text-center">
+      <h2> Best Frand </h2>
+      <h3> Steven Okai </h3>
+      <p>
+      Went to Caltech or attending the wedding with a Caltech alumnus?
+      Good guy Okai can help you find a ride to the Bay to LA, a place
+      to stay, or a carpool to the wedding.
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+<!-- Bootstrap code -->
+{% include "wedding/blocks/bootstrap.html" %}

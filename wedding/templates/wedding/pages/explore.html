@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% block title %}
+  <head>
+
+    <!-- Page title -->
+    <title>Explore LA!</title>
+
+    <!-- Code shared across all head blocks -->
+    {% include "wedding/blocks/head.html" %}
+
+  </head>
+{% endblock %}
+
+<!-- Navbar code -->
+{% include "wedding/blocks/navbar.html" %}
+
+{% block travel %}
+<div id="travel" class="container-fluid text-center page-container">
+  <h1 class="page-header">Explore LA!</h1>
+
+  <!-- Row with wedding map and venue info -->
+  <div class="row">
+    <div class="col-sm-4 base-font text-center">
+      <h2> Thing 1 </h2>
+      <p>
+      Text 1
+      </p>
+    </div>
+    <div class="col-sm-4 base-font text-center">
+      <h2> Thing 2 </h2>
+      <p>
+      Text 2
+      </p>
+    </div>
+    <div class="col-sm-4 base-font text-center">
+      <h2> Thing 3 </h2>
+      <p>
+      Text 3
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+<!-- Bootstrap code -->
+{% include "wedding/blocks/bootstrap.html" %}
