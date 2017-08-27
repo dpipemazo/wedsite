@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% block title %}
+  <head>
+
+    <!-- Page title -->
+    <title>Weekend Events</title>
+
+    <!-- Code shared across all head blocks -->
+    {% include "wedding/blocks/head.html" %}
+
+  </head>
+{% endblock %}
+
+<!-- Navbar code -->
+{% include "wedding/blocks/navbar.html" %}
+
+{% block events %}
+<div id="events" class="container-fluid text-center page-container">
+  <h1 class="page-header">Weekend Events</h1>
+
+  <!-- Row with wedding map and venue info -->
+  <div class="row">
+    <div class="col-sm-3 base-font text-center">
+      <h2> Friday, 2/16 </h2>
+      <p> Shabbat/Chinese New Year </p>
+    </div>
+    <div class="col-sm-3 base-font text-center">
+      <h2> Saturday, 2/17 </h2>
+      <p> No activities, explore!</p>
+    </div>
+    <div class="col-sm-3 base-font text-center">
+      <h2> Sunday, 2/18 </h2>
+      <p> Ceremony & Reception </p>
+    </div>
+    <div class="col-sm-3 base-font text-center">
+      <h2> Monday, 2/19 </h2>
+      <p> Farewell Brunch </p>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+<!-- Bootstrap code -->
+{% include "wedding/blocks/bootstrap.html" %}

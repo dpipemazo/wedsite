@@ -1,0 +1,50 @@
+{% load static %}
+{% load easy_maps_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% block title %}
+  <head>
+
+    <!-- Page title -->
+    <title>Ceremony and Reception</title>
+
+    <!-- Code shared across all head blocks -->
+    {% include "wedding/blocks/head.html" %}
+
+  </head>
+{% endblock %}
+
+<!-- Navbar code -->
+{% include "wedding/blocks/navbar.html" %}
+
+{% block wedding %}
+<div id="wedding" class="container-fluid text-center page-container">
+  <h1 class="page-header">Ceremony and Reception</h1>
+
+  <!-- Row with wedding map and venue info -->
+  <div class="row">
+    <div class="col-sm-1 base-font text-center"> </div>
+    <div class="col-sm-6 base-font text-center">
+      {% easy_map "796 Vía Del Monte, Palos Verdes Estates, CA 90274" 100 300 5 using 'wedding/blocks/responsive_map.html' %}
+    </div>
+    <div class="col-sm-5 base-font text-center">
+      <h2 class="base-font"> Venue </h2>
+      <p> La Venta Inn <br>
+          796 Vía Del Monte, Palos Verdes Estates, CA 90274 <br>
+          (310) 373-0123 <br>
+      </p>
+
+      <h2 class="base-font"> Ceremony </h2>
+      <p> 4:00 PM on Sunday, February 18, 2018 <br>
+          Beach formal attire, please <br>
+          Ceremony followed by cocktails, dinner and dancing <br>
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+<!-- Bootstrap code -->
+{% include "wedding/blocks/bootstrap.html" %}

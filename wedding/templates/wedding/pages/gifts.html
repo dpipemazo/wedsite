@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% block title %}
+  <head>
+
+    <!-- Page title -->
+    <title>Gifts</title>
+
+    <!-- Code shared across all head blocks -->
+    {% include "wedding/blocks/head.html" %}
+
+  </head>
+{% endblock %}
+
+<!-- Navbar code -->
+{% include "wedding/blocks/navbar.html" %}
+
+{% block gifts %}
+<div id="gifts" class="container-fluid text-center page-container">
+  <h1 class="page-header">Gifts</h1>
+
+  <!-- Row with wedding map and venue info -->
+  <div class="row">
+    <div class="col-sm-6 base-font text-center">
+      <h2> Donations </h2>
+      <p>
+      We both hold the following charities in very high regard. Please consider
+      a donation in lieu of or in addition to any gift. <br>
+      1. Charity 1 <br>
+      2. Charity 2
+      </p>
+    </div>
+    <div class="col-sm-6 base-font text-center">
+      <h2> Registries </h2>
+      <p>
+      We're registered at the following locations:<br>
+      1. Store 1 <br>
+      2. Store 2
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+<!-- Bootstrap code -->
+{% include "wedding/blocks/bootstrap.html" %}
