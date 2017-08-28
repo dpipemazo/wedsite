@@ -9,7 +9,8 @@
     },
     "GOOGLE_MAPS_API_KEY" : {
       "required": true
-    }
+    },
+    "DEBUG" : "True"
   },
   "formation": {
   },
@@ -20,5 +21,8 @@
     {
       "url": "heroku/python"
     }
-  ]
+  ],
+  "scripts" : {
+      "postdeploy": "python manage.py migrate"
+  }
 }
