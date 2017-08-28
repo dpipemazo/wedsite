@@ -56,9 +56,13 @@ Now, create a file in the top-level of the directoy, `.env`, and put all of the
 variables printed out from `heroku config` in the file in the following format.
 You can skip the DATABASE_URL parameter, since heroku takes care of that
 locally. As can be implied, **you should never commit and/or push this file**.
+In order for local development to work, you **must** put `Debug='True'` into the
+file, this this then turns off mandatory SSL encryption which doesn't work
+locally.
 ```
-DJANGO_SECRET_KEY="YYYY"
-GOOGLE_MAPS_API_KEY="ZZZZ"
+DJANGO_SECRET_KEY='YYYY'
+GOOGLE_MAPS_API_KEY='ZZZZ'
+DEBUG='True'
 ...
 ```
 

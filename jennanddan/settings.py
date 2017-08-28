@@ -23,8 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = (os.environ.get('DEBUG') == 'True')
 
 ALLOWED_HOSTS = [
     '.herokuapp.com',
@@ -145,3 +144,7 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 # For Easy Maps
 EASY_MAPS_GOOGLE_MAPS_API_KEY = os.environ.get('GOOGLE_MAPS_API_KEY')
 EASY_MAPS_CENTER = (-41.3, 32)
+
+# Redirect all HTTP requests to HTTPS. If running in debug mode turn this off,
+#   otherwise require it s.t. the site is secure.
+SECURE_SSL_REDIRECT = not DEBUG
