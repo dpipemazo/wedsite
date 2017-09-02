@@ -13,33 +13,64 @@
     <!-- Code shared across all head blocks -->
     {% include "wedding/blocks/head.html" %}
 
+    <style>
+      .main_jumbotron {
+          background-image: url({% static 'images/la_venta_ceremony.jpg' %});
+          background-size: cover;
+          background-position: top; /* Centers - top to avoid head chop-off */
+          height: 100vh;
+          margin-bottom:0px;
+      }
+    </style>
+
   </head>
 {% endblock %}
 
 <!-- Navbar code -->
 {% include "wedding/blocks/navbar.html" %}
 
+{% block prettyyyyyy %}
+<div class="main_jumbotron jumbotron">
+  <div class="container-fluid text-center">
+      <h1 class="wedding-text" style="color:white">
+        Sunday February 18, 2018
+      </h1>
+  </div>
+</div>
+{% endblock %}
+
 {% block wedding %}
 <div id="wedding" class="container-fluid text-center page-container">
   <h1 class="page-header">Ceremony and Reception</h1>
 
   <!-- Row with wedding map and venue info -->
-  <div class="row">
-    <div class="col-sm-1 base-font text-center"> </div>
-    <div class="col-sm-6 base-font text-center">
+  <div class="row vertical-aligned-row">
+    <div class="col-sm-4 base-font text-center">
       {% easy_map "796 Vía Del Monte, Palos Verdes Estates, CA 90274" 100 300 5 using 'wedding/blocks/responsive_map.html' %}
     </div>
-    <div class="col-sm-5 base-font text-center">
-      <h2 class="base-font"> Venue </h2>
+    <div class="col-sm-4 base-font text-center">
+      <h2 class="base-font">Venue</h2>
       <p> La Venta Inn <br>
           796 Vía Del Monte, Palos Verdes Estates, CA 90274 <br>
           (310) 373-0123 <br>
+          <a href="https://www.google.com/maps?saddr=My+Location&daddr=La+Venta+Inn,+796+Vía+Del+Monte,+Palos+Verdes+Estates,+CA+90274">Directions</a><br>
+          Parking available on-site.
       </p>
-
-      <h2 class="base-font"> Ceremony </h2>
+    </div>
+    <div class="col-sm-4 base-font text-center">
+      <h2 class="base-font">Ceremony & Reception</h2>
+      <h3>Ceremony</h3>
       <p> 4:00 PM on Sunday, February 18, 2018 <br>
-          Beach formal attire, please <br>
-          Ceremony followed by cocktails, dinner and dancing <br>
+          Beach formal attire, please<br>
+          Ceremony will be outdoors with ideal weather, indoors else
+      </p>
+      <h3>Reception</h3>
+      <p>
+          Cocktail hour during sunset immediately follows ceremony. Be sure to
+          sign the photo guest book using the photo booth!<br>
+          We'll then move indoors for dinner, dancing and other wedding-related
+          festivities.<br>
+          The evening will wrap up around 9:00PM.
       </p>
     </div>
   </div>

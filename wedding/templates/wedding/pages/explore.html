@@ -1,4 +1,5 @@
 {% load static %}
+{% load easy_maps_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,21 +26,58 @@
   <!-- Row with wedding map and venue info -->
   <div class="row">
     <div class="col-sm-4 base-font text-center">
-      <h2> Thing 1 </h2>
+      <h2> The South Bay </h2>
+
+      {% easy_map "South Bay, Los Angeles County, CA" 100 100 10 using 'wedding/blocks/explore_map.html'%}
+
       <p>
-      Text 1
+      With the wedding in Palos Verdes, you'll likely be staying in or near
+      Los Angeles's South Bay which notably includes Hermosa, Manhattan and
+      Redondo Beaches. There are fun areas around <a href="https://www.yelp.com/biz/hermosa-beach-pier-hermosa-beach">Hermosa</a> and <a href="https://www.yelp.com/biz/redondo-beach-pier-redondo-beach">Redondo Beach</a>
+       piers, as well as many great <a href="https://nobodyhikesinla.com/tag/south-bay/">hiking/outdoor opportunities</a> if you're so inclined.
+       <br><br>
+       The Torrance area is well-known for its <a href="https://www.yelp.com/search?find_desc=Japanese+Food&find_loc=Torrance%2C+CA&ns=1">Japanese Food</a>, and some of Dan's favorite
+       小笼包 (xiaolongbao, shanghai-style soup dumplings) can be found at <a href="https://www.yelp.com/search?find_desc=Din+Tai+Fung&find_loc=Torrance,+CA">Din Tai Fung</a> in the <a href="https://www.yelp.com/biz/del-amo-fashion-center-torrance">Del Amo Fashion Center</a>.
+       <br><br>
+       Nearby Terranea resort has an <a href="http://m.terranea.com/southern-california-golf-courses">award-winning 9-hole golf course</a> which can also be a fun activity for a cool February afternoon. The <a href="https://www.yelp.com/biz/terranea-resort-rancho-palos-verdes">resort </a>also has many other activities including a spa and pools.
+       <br><br>
+       Whichever activites you choose, please
+       be sure to not do anything that lands you at Jennifer's Hospital,<a href="http://www.harbor-ucla.org/">Harbor-UCLA</a>, in Torrance :). She'll be busy
+       with wedding festivities, though her talented colleagues will assuredly take care of you if need be.
       </p>
     </div>
     <div class="col-sm-4 base-font text-center">
-      <h2> Thing 2 </h2>
+      <h2> Downtown </h2>
+
+      {% easy_map "111 S Grand Ave, Los Angeles, CA 90012" 100 100 10 using 'wedding/blocks/explore_map.html' %}
+
       <p>
-      Text 2
+      The heat of Los Angeles is filled with amazing <a href="https://www.yelp.com/search?cflt=museums&find_loc=Downtown%2C+Los+Angeles%2C+CA">museums</a> that are sure to please all artistic and cultural tastes.
+      <br><br>
+      Either before or after the museums it's highly recommended to visit <a href="https://www.yelp.com/biz/grand-central-market-los-angeles">LA's Grand Central Market</a> which is full of food stalls represnting many countries and tastes from around the globe.
+      <br><br>
+      The LA philharmonic will be playing a selection of Beethoven, Mozart and Salonen <a href="https://www.laphil.com/tickets/composer-salonen-wing-on-wing/2018-02-17">on Saturday aftenoon at 2PM</a> at Walt Disney concert hall.
+      <br><br>
+      Interesting neighborhoods to discover are LA's <a href="http://www.artsdistrictla.org/">Arts District</a>,
+       <a href="http://www.welikela.com/things-to-do-little-tokyo/">Little Tokyo<a>, and <a href="https://www.yelp.com/search?find_desc=all+you+can+eat+&find_loc=koreatown&ns=1">Koreatown</a>.
+      <br><br>
+      If you're looking for food recommendations, don't hesitate to contact Steven as he and his crew have likely eaten at every restaraunt in LA at this point and can recommend their favorites.
       </p>
     </div>
     <div class="col-sm-4 base-font text-center">
-      <h2> Thing 3 </h2>
+      <h2> Westside </h2>
+
+      {% easy_map "Westside, Los Angeles, CA" 100 100 10 using 'wedding/blocks/explore_map.html' %}
+
       <p>
-      Text 3
+      LA's Westside area is home to Santa Monica and Venice Beaches as well as
+      Westwood (UCLA), Sawtelle, and pretty much every ritzy area of LA you're familiar with from the movies.
+      <br><br>
+      <a href="http://www.getty.edu/">The Getty<a> and <a href="https://www.skirball.org/">Skirball Jewish Cultural Center</a> are two prominent Westside attractions that could fill your entire weekend with activities and attractions. The <a href="http://www.getty.edu/visit/villa/">Getty Villa</a> is also nearby in Malibu if you're looking for a more Roman Classical museum experience.
+      <br><br>
+      The <a href="https://www.yelp.com/biz/santa-monica-boardwalk-santa-monica">Santa Monica Boardwalk</a> ambles along the ocean and is lined with interesting (read: touristy and/or weird) shops. You can head further south along the walk to <a href="https://www.yelp.com/biz/muscle-beach-los-angeles">Muscle Beach</a> to see the bodybuilders if you want to feel terrible about all of the food we've been recommending you eat.
+      <br><br>
+      The <a href="https://www.google.com/maps/place/Sawtelle,+Los+Angeles,+CA/@34.0425561,-118.4740897,14z/data=!3m1!4b1!4m5!3m4!1s0x80c2bb63292faa89:0xbc2ba15575fd9c5b!8m2!3d34.0433903!4d-118.4542772">Sawtelle</a> area has amazing food including a favorite dessert spots, <a href="https://www.yelp.com/biz/blockheads-shavery-los-angeles">Blockheads Shavery</a>, and a favorite coffee shop <a href="https://www.yelp.com/biz/balconi-coffee-company-los-angeles">Balconi Coffee Company</a> (we highly recommend the almond essence latte).
       </p>
     </div>
   </div>
