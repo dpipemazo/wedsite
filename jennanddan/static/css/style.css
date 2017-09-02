@@ -28,11 +28,29 @@ body {
   font-family: 'Great Vibes', cursive;
 }
 
+.wedding-text {
+  margin-top: 5vh;
+  font-family: 'Great Vibes', cursive;
+}
+
 .venue-date-text {
   margin-top: 30vh;
 }
 
 .hr-bar {
   margin-top:40px;
+}
+
+.responsive-map {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 100%;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.vertical-aligned-row {
+    display: flex;
+    align-items: center;
 }
 

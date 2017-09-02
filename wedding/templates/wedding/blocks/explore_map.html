@@ -1,0 +1,8 @@
+{% extends "easy_maps/map.html" %}
+
+{% block html %}
+<div id="map-canvas-{{ map.pk }}" class="easy-map-googlemap responsive-map">
+  {% block noscript %}{{ block.super }}{% endblock %}
+  {% if not map.computed_address %}<!-- geocoding error -->{% endif %}
+</div>
+{% endblock %}
