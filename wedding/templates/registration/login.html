@@ -1,0 +1,52 @@
+{% extends "wedding/blocks/base.html" %}
+{% load static %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block content %}
+<div id="login" class="container-fluid text-center page-container">
+    <h1 class="page-header">Account Login</h1>
+
+    {% if form.errors %}
+    <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+
+    {% if next %}
+        {% if user.is_authenticated %}
+        <p>Your account doesn't have access to this page. To proceed,
+        please login with an account that has access.</p>
+        {% else %}
+        <p>Please log in to see this page.</p>
+        {% endif %}
+    {% endif %}
+
+    <div class="row">
+        <div class="col-sm-12 base-font text-center">
+            <div align="center">
+                <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                <table>
+                <tr>
+                    <td class="login-box">{{ form.username.label_tag }}</td>
+                    <td class="login-box">{{ form.username }}</td>
+                </tr>
+                <tr>
+                    <td class="login-box">{{ form.password.label_tag }}</td>
+                    <td class="login-box">{{ form.password }}</td>
+                </tr>
+                </table>
+
+                <input type="submit" class="login-button" value="Log In" />
+                <input type="hidden" name="next" value="{{ next }}" />
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {# Assumes you setup the password_reset view in your URLconf #}
+    <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+</div>
+
+{% endblock %}

@@ -1,24 +1,11 @@
+{% extends "wedding/blocks/base.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-
 {% block title %}
-  <head>
-
-    <!-- Page title -->
-    <title>Travel & Lodging</title>
-
-    <!-- Code shared across all head blocks -->
-    {% include "wedding/blocks/head.html" %}
-
-  </head>
+Travel
 {% endblock %}
 
-<!-- Navbar code -->
-{% include "wedding/blocks/navbar.html" %}
-
-{% block travel %}
+{% block content %}
 <div id="travel" class="container-fluid text-center page-container">
   <h1 class="page-header">Travel & Lodging</h1>
 
@@ -79,6 +66,3 @@
   </div>
 </div>
 {% endblock %}
-
-<!-- Bootstrap code -->
-{% include "wedding/blocks/bootstrap.html" %}

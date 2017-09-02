@@ -1,36 +1,22 @@
-{% load static %}
+{% extends "wedding/blocks/base.html" %}
 {% load easy_maps_tags %}
-
-<!DOCTYPE html>
-<html lang="en">
+{% load static %}
 
 {% block title %}
-  <head>
-
-    <!-- Page title -->
-    <title>Jenn and Dan's Wedding</title>
-
-    <!-- Code shared across all head blocks -->
-    {% include "wedding/blocks/head.html" %}
-
-    <!-- All CSS that requires static images -->
-    <style>
-      .main_jumbotron {
-          background-image: url({% static 'images/landing_image_date.jpg' %});
-          background-size: cover;
-          background-position: top; /* Centers - top to avoid head chop-off */
-          height: 100vh;
-          margin-bottom:0px;
-      }
-    </style>
-
-  </head>
+J+D
 {% endblock %}
 
-<!-- Navbar code -->
-{% include "wedding/blocks/navbar.html" %}
+{% block style %}
+  .main_jumbotron {
+      background-image: url({% static 'images/landing_image_date.jpg' %});
+      background-size: cover;
+      background-position: top; /* Centers - top to avoid head chop-off */
+      height: 100vh;
+      margin-bottom:0px;
+  }
+{% endblock %}
 
-{% block landing_image %}
+{% block content %}
 <!-- Intro picture/info -->
 <section>
   <div class="main_jumbotron jumbotron">
@@ -47,6 +33,3 @@
   </div>
 </section>
 {% endblock %}
-
-<!-- Bootstrap code -->
-{% include "wedding/blocks/bootstrap.html" %}

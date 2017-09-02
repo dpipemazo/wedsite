@@ -1,24 +1,14 @@
+{% extends "wedding/blocks/base.html" %}
 {% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
 
 {% block title %}
-  <head>
-
-    <!-- Page title -->
-    <title>Gifts</title>
-
-    <!-- Code shared across all head blocks -->
-    {% include "wedding/blocks/head.html" %}
-
-  </head>
+Gifts
 {% endblock %}
 
-<!-- Navbar code -->
-{% include "wedding/blocks/navbar.html" %}
-
-{% block gifts %}
+{% block content %}
 <div id="gifts" class="container-fluid text-center page-container">
   <h1 class="page-header">Gifts</h1>
 
@@ -40,6 +30,3 @@
   </div>
 </div>
 {% endblock %}
-
-<!-- Bootstrap code -->
-{% include "wedding/blocks/bootstrap.html" %}

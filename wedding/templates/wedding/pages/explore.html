@@ -1,25 +1,12 @@
-{% load static %}
+{% extends "wedding/blocks/base.html" %}
 {% load easy_maps_tags %}
-
-<!DOCTYPE html>
-<html lang="en">
+{% load static %}
 
 {% block title %}
-  <head>
-
-    <!-- Page title -->
-    <title>Explore LA!</title>
-
-    <!-- Code shared across all head blocks -->
-    {% include "wedding/blocks/head.html" %}
-
-  </head>
+Explore LA!
 {% endblock %}
 
-<!-- Navbar code -->
-{% include "wedding/blocks/navbar.html" %}
-
-{% block travel %}
+{% block content %}
 <div id="travel" class="container-fluid text-center page-container">
   <h1 class="page-header">Explore LA!</h1>
 
@@ -83,6 +70,3 @@
   </div>
 </div>
 {% endblock %}
-
-<!-- Bootstrap code -->
-{% include "wedding/blocks/bootstrap.html" %}
