@@ -148,3 +148,12 @@ EASY_MAPS_CENTER = (-41.3, 32)
 # Redirect all HTTP requests to HTTPS. If running in debug mode turn this off,
 #   otherwise require it s.t. the site is secure.
 SECURE_SSL_REDIRECT = not DEBUG
+
+#
+# Email preferences. Grab the mailgun ENV variables
+#
+EMAIL_HOST =  os.environ.get('MAILGUN_SMTP_SERVER')
+EMAIL_PORT = os.environ.get('MAILGUN_SMTP_PORT')
+EMAIL_HOST_USER = os.environ.get('MAILGUN_SMTP_LOGIN')
+EMAIL_HOST_PASSWORD = os.environ.get('MAILGUN_SMTP_PASSWORD')
+EMAIL_USE_TLS = True
