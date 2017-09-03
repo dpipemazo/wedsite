@@ -27,3 +27,9 @@ class RSVPView(View):
             return render(request, "wedding/pages/rsvp.html", {})
         else:
             return redirect_to_login("/rsvp")
+
+class CreateAccountView(View):
+    """
+    Account creation view. POST only. Will take a name, street address,
+    email address and password and will create a new user.
+    """

@@ -22,4 +22,7 @@ urlpatterns = [
 
     # Admin UI. For the happy couple.
     url(r'^admin/', admin.site.urls),
+
+    # Account stuff
+    url(r'^accounts/', include('django.contrib.auth.urls')),
 ]

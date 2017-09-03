@@ -20,6 +20,4 @@ urlpatterns = [
     url(r'^gifts$', StaticView.as_view(template="gifts.html"), name='gifts'),
     url(r'^contact$', StaticView.as_view(template="contact.html"), name='contact'),
     url(r'^rsvp$', RSVPView.as_view(), name='rsvp'),
-    url(r'^accounts/', include('django.contrib.auth.urls')),
-
 ]
