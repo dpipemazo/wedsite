@@ -1,5 +1,7 @@
 from django.conf.urls import url, include
-from wedding.views import StaticView, RSVPView
+from wedding.views import (
+    StaticView, RSVPView, CreateAccountView
+)
 from django.contrib.auth.views import (
     LoginView, PasswordResetView, PasswordChangeView, PasswordChangeDoneView,
     LogoutView)
@@ -20,4 +22,5 @@ urlpatterns = [
     url(r'^gifts$', StaticView.as_view(template="gifts.html"), name='gifts'),
     url(r'^contact$', StaticView.as_view(template="contact.html"), name='contact'),
     url(r'^rsvp$', RSVPView.as_view(), name='rsvp'),
+    url(r'^create-account$', CreateAccountView.as_view(), name='create-account'),
 ]

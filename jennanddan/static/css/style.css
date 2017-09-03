@@ -59,6 +59,15 @@ body {
   padding-bottom:10px;
 }
 
+.rsvp-box {
+  padding-top:10px;
+  padding-bottom:10px;
+  padding-left:5px;
+  padding-right:5px;
+  width:100px;
+  text-align:center;
+}
+
 .login-button {
   margin-top:10px;
   margin-bottom:10px;
