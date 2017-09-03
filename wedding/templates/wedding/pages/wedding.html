@@ -1,35 +1,22 @@
-{% load static %}
+{% extends "wedding/blocks/base.html" %}
 {% load easy_maps_tags %}
-
-<!DOCTYPE html>
-<html lang="en">
+{% load static %}
 
 {% block title %}
-  <head>
-
-    <!-- Page title -->
-    <title>Ceremony and Reception</title>
-
-    <!-- Code shared across all head blocks -->
-    {% include "wedding/blocks/head.html" %}
-
-    <style>
-      .main_jumbotron {
-          background-image: url({% static 'images/la_venta_ceremony.jpg' %});
-          background-size: cover;
-          background-position: top; /* Centers - top to avoid head chop-off */
-          height: 100vh;
-          margin-bottom:0px;
-      }
-    </style>
-
-  </head>
+Wedding
 {% endblock %}
 
-<!-- Navbar code -->
-{% include "wedding/blocks/navbar.html" %}
+{% block style %}
+  .main_jumbotron {
+      background-image: url({% static 'images/la_venta_ceremony.jpg' %});
+      background-size: cover;
+      background-position: top; /* Centers - top to avoid head chop-off */
+      height: 100vh;
+      margin-bottom:0px;
+  }
+{% endblock %}
 
-{% block prettyyyyyy %}
+{% block content %}
 <div class="main_jumbotron jumbotron">
   <div class="container-fluid text-center">
       <h1 class="wedding-text" style="color:white">
@@ -37,9 +24,7 @@
       </h1>
   </div>
 </div>
-{% endblock %}
 
-{% block wedding %}
 <div id="wedding" class="container-fluid text-center page-container">
   <h1 class="page-header">Ceremony and Reception</h1>
 
@@ -76,6 +61,3 @@
   </div>
 </div>
 {% endblock %}
-
-<!-- Bootstrap code -->
-{% include "wedding/blocks/bootstrap.html" %}

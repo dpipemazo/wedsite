@@ -1,24 +1,11 @@
+{% extends "wedding/blocks/base.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-
 {% block title %}
-  <head>
-
-    <!-- Page title -->
-    <title>Weekend Events</title>
-
-    <!-- Code shared across all head blocks -->
-    {% include "wedding/blocks/head.html" %}
-
-  </head>
+Weekend Events
 {% endblock %}
 
-<!-- Navbar code -->
-{% include "wedding/blocks/navbar.html" %}
-
-{% block events %}
+{% block content %}
 <div id="events" class="container-fluid text-center page-container">
   <h1 class="page-header">Weekend Events</h1>
 
@@ -47,6 +34,3 @@
   </div>
 </div>
 {% endblock %}
-
-<!-- Bootstrap code -->
-{% include "wedding/blocks/bootstrap.html" %}

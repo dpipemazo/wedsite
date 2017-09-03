@@ -1,0 +1,111 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>
+        {% block title %}
+            Default Title
+        {% endblock %}
+    </title>
+
+<meta charset="utf-8">
+<!--Set page width to device width and default zoom (more for mobile)-->
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1 shrink-to-fit=no">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Great+Vibes|Hammersmith+One|Montserrat:200,300" rel="stylesheet">
+<!-- Our own CSS -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+
+<!-- Favicons -->
+<link rel="apple-touch-icon-precomposed"
+    sizes="57x57" href="{% static 'images/favicon-114.png' %}">
+<link rel="apple-touch-icon-precomposed"
+    sizes="114x114" href="{% static 'images/favicon-114.png' %}">
+<link rel="apple-touch-icon-precomposed"
+    sizes="72x72" href="{% static 'images/favicon-144.png' %}">
+<link rel="apple-touch-icon-precomposed"
+    sizes="144x144" href="{% static 'images/favicon-144.png' %}">
+<link rel="icon" type="image/vnd.microsoft.icon"
+    sizes="32x32 48x48" href="{% static 'images/favicon-32.ico' %}">
+<link rel="icon" sizes="128x128" href="{% static 'images/favicon-128.icns' %}">
+<link rel="icon" href="{% static 'images/favicon-144.png' %}" type="image/x-icon">
+
+<style>
+{% block style %}
+{% endblock %}
+</style>
+
+</head>
+
+{% block navbar %}
+
+<!-- Scrollable area -->
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<!-- Navbar: fixed/always visible -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+
+    <!-- Shows logo. Menu button visible only when on narrow screen-->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse"
+        data-target="#myNavbar">
+        <!-- Draws the 3 lines for the menu button-->
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand base-font" href="/">J&D</a>
+    </div>
+
+    <div id="myNavbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right base-font">
+        <li><a href="{% url 'story' %}">Our Story</a></li>
+        <li><a href="{% url 'wedding' %}">Ceremony & Reception</a></li>
+        <li><a href="{% url 'events' %}">Weekend Events</a></li>
+        <li><a href="{% url 'travel' %}">Travel & Lodging</a></li>
+        <li><a href="{% url 'explore' %}">Explore LA!</a></li>
+        <li><a href="{% url 'gifts' %}">Gifts</a></li>
+        <li><a href="{% url 'rsvp' %}">RSVP</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+        <li>
+            {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}">Log Out</a>
+            {% else %}
+                <a href="{% url 'login' %}?next={% url 'index' %}">Log In</a>
+            {% endif %}
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+{% endblock %}
+
+<!-- Content, expected to be overwritten -->
+{% block content %}
+
+{% endblock %}
+
+{% block bootstrap %}
+
+<!-- Close off body and HTML doc -->
+</body>
+</html>
+
+<!-- Bootstrap scripts -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+{% endblock %}
