@@ -97,7 +97,7 @@ class CreateAccountView(SuccessURLAllowedHostsMixin, FormView):
         #   that we found
         user_profile = Profile(
             user=user,
-            address=form.cleaned_data.get('invite_address'))
+            address=form.get_address())
         user_profile.save()
         form.rsvp.profile = user_profile
         form.rsvp.save()
