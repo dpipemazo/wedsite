@@ -88,12 +88,9 @@ class CreateUserForm(forms.Form):
 
         # Pull all RSVPs under the given last name
         rsvps = RSVP.objects.all().filter(last_names__icontains=last_name).filter(profile=None)
-        print "Got RSVPs {}".format(rsvps)
         match = False
         for rsvp in rsvps:
             rsvp_nums = strip_address(rsvp.invite_address)
-            print "RSVP Nums: {}".format(rsvp_nums)
-            print "Addr Nums: {}".format(addr_nums)
             if (len(addr_nums) == len(rsvp_nums)):
                 match = True
                 for idx, num in enumerate(addr_nums):
