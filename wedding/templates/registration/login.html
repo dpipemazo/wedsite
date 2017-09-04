@@ -13,7 +13,7 @@ Login
     <p>Your username and password didn't match. Please try again.</p>
     {% endif %}
 
-    {% if next %}
+    {% if next != "/" %}
         {% if user.is_authenticated %}
         <p>Your account doesn't have access to this page. To proceed,
         please login with an account that has access.</p>
@@ -23,14 +23,14 @@ Login
     {% endif %}
 
     <div class="row">
-        <div class="col-sm-12 base-font text-center">
+        <div class="col-sm-6 base-font text-center">
             <div align="center">
                 <h2> Existing Users </h2>
                     <form method="post" action="{% url 'login' %}">
                     {% csrf_token %}
                     <table>
                     <tr>
-                        <td class="login-box">{{ form.username.label_tag }}</td>
+                        <td class="login-box">Email Address</td>
                         <td class="login-box">{{ form.username }}</td>
                     </tr>
                     <tr>
@@ -42,12 +42,22 @@ Login
                     <input type="submit" class="login-button" value="Log In" />
                     <input type="hidden" name="next" value="{{ next }}" />
                     </form>
+
+                    <p><a href="{% url 'password_reset' %}">Forgot password?</a></p>
+            </div>
+        </div>
+        <div class="col-sm-6 base-font text-center">
+            <div align="center">
+                <h2> New Users </h2>
+                    <p>
+                        Welcome to Dan and Jennifer's Wedding site!
+                        <br><br>
+                        Please click <a href="{% url 'create-account' %}">here</a> to create<br>
+                        a new account so that you can submit your RSVP.
+                    </p>
             </div>
         </div>
     </div>
-
-    {# Assumes you setup the password_reset view in your URLconf #}
-    <p><a href="{% url 'password_reset' %}">Forgot password?</a></p>
 </div>
 
 {% endblock %}

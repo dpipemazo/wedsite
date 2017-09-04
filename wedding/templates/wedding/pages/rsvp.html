@@ -8,5 +8,41 @@ RSVP
 {% block content %}
 <div id="contact" class="container-fluid text-center page-container">
   <h1 class="page-header">RSVP</h1>
+    <form method="post" action="{% url 'rsvp' %}">
+        {{ formset.management_form }}
+        {% csrf_token %}
+        {% for form in formset %}
+            {{ form.id }}
+            <div class="row base-font" align="center">
+                <table>
+                    <tr>
+                        <td class="rsvp-box">Name</td>
+                        <td class="rsvp-box">Attend Friday Dinner?</td>
+                        <td class="rsvp-box">Attend Wedding?</td>
+                        <td class="rsvp-box">Child?</td>
+                        <td class="rsvp-box">Kosher</td>
+                        <td class="rsvp-box">Vegetarian</td>
+                        <td class="rsvp-box">Vegan</td>
+                        <td class="rsvp-box">Gluten Free</td>
+                        <td class="rsvp-box">Other</td>
+                        <td class="rsvp-box">Special Request</td>
+                    </tr>
+                    <tr>
+                        <td class="rsvp-box">{{ form.name }} </td>
+                        <td class="rsvp-box">{{ form.is_attending_cny }} </td>
+                        <td class="rsvp-box">{{ form.is_attending_wedding }} </td>
+                        <td class="rsvp-box">{{ form.is_child }} </td>
+                        <td class="rsvp-box">{{ form.dietary_kosher }} </td>
+                        <td class="rsvp-box">{{ form.dietary_vegetarian }} </td>
+                        <td class="rsvp-box">{{ form.dietary_vegan }} </td>
+                        <td class="rsvp-box">{{ form.dietary_gluten_free }} </td>
+                        <td class="rsvp-box">{{ form.dietary_other }} </td>
+                        <td class="rsvp-box">{{ form.special_requests }} </td>
+                    </tr>
+                </table>
+            </div>
+        {% endfor %}
+        <input type="submit" class="login-button" value="Update" />
+    </form>
 </div>
 {% endblock %}
