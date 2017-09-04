@@ -29,8 +29,36 @@ class CreateUserForm(forms.Form):
     )
 
     # Invitation address
-    invite_address = forms.CharField(
-        label="Address to which invitation was sent",
+    invite_street1 = forms.CharField(
+        label="Street Address Line 1",
+        max_length=256,
+        widget=forms.TextInput(
+            attrs={'size':FORM_FIELD_WIDTH}),
+    )
+
+    invite_street2 = forms.CharField(
+        label="Street Address Line 2",
+        max_length=256,
+        widget=forms.TextInput(
+            attrs={'size':FORM_FIELD_WIDTH}),
+    )
+
+    invite_city = forms.CharField(
+        label="City",
+        max_length=256,
+        widget=forms.TextInput(
+            attrs={'size':FORM_FIELD_WIDTH}),
+    )
+
+    invite_state = forms.CharField(
+        label="State",
+        max_length=256,
+        widget=forms.TextInput(
+            attrs={'size':FORM_FIELD_WIDTH}),
+    )
+
+    invite_zip = forms.CharField(
+        label="Postal Code",
         max_length=256,
         widget=forms.TextInput(
             attrs={'size':FORM_FIELD_WIDTH}),
@@ -64,49 +92,12 @@ class CreateUserForm(forms.Form):
         'password_mismatch': "Passwords do not match, please double-check and try again",
     }
 
-    def clean_invite_address(self):
-        """
-        Makes sure the invite address entered matches a valid RSVP object
-        """
-        def strip_address(address):
-            """
-            Takes an address and returns only the numbers, in order. This is
-            what we'll use to validate the RSVP claim
-            """
-            return re.findall('\d', address)
-
-        # Make sure the address entered is mildly associated with a free
-        #   address in our RSVP database
-        address = self.cleaned_data.get('invite_address')
-        last_name = self.cleaned_data.get('last_name')
-        addr_nums = strip_address(address)
-        if not addr_nums:
-            raise forms.ValidationError(
-                self.error_messages['invalid_address'],
-                code='invalid_address'
-            )
-
-        # Pull all RSVPs under the given last name
-        rsvps = RSVP.objects.all().filter(last_names__icontains=last_name).filter(profile=None)
-        match = False
-        for rsvp in rsvps:
-            rsvp_nums = strip_address(rsvp.invite_address)
-            if (len(addr_nums) == len(rsvp_nums)):
-                match = True
-                for idx, num in enumerate(addr_nums):
-                    if num != rsvp_nums[idx]:
-                        match = False
-                        break
-
-        if not match:
-            raise forms.ValidationError(
-                self.error_messages['rsvp_fail'],
-                code='address_fail',
-                params={'address':address, 'last_name':last_name})
-
-        # Note the RSVP
-        self.rsvp = rsvp
-        return address
+    def get_address(self):
+        return self.cleaned_data.get('invite_street1') + " " + \
+            self.cleaned_data.get('invite_street2') + " " + \
+            self.cleaned_data.get('invite_city') + " " + \
+            self.cleaned_data.get('invite_state') + " " + \
+            self.cleaned_data.get('invite_zip')
 
     def clean_email_address(self):
         username = self.cleaned_data.get('email_address')
@@ -123,6 +114,13 @@ class CreateUserForm(forms.Form):
         """
         Ensure that all of the data is proper for the account creation
         """
+        def strip_address(address):
+            """
+            Takes an address and returns only the numbers, in order. This is
+            what we'll use to validate the RSVP claim
+            """
+            return re.findall('\d', address)
+
         password1 = self.cleaned_data.get('password1')
         password2 = self.cleaned_data.get('password2')
 
@@ -132,6 +130,37 @@ class CreateUserForm(forms.Form):
                 self.error_messages['password_mismatch'],
                 code='password_mismatch',
             )
+
+        # Make sure the address entered is mildly associated with a free
+        #   address in our RSVP database
+        address = self.get_address()
+        last_name = self.cleaned_data.get('last_name')
+        first_name = self.cleaned_data.get('first_name')
+
+        addr_nums = strip_address(address)
+        if not addr_nums:
+            raise forms.ValidationError(
+                self.error_messages['invalid_address'],
+                code='invalid_address'
+            )
+
+        # Pull all RSVPs under the given last name
+        rsvps = RSVP.objects.all().filter(last_names__icontains=last_name).filter(profile=None)
+        found_rsvp = None
+        for rsvp in rsvps:
+            rsvp_nums = strip_address(rsvp.invite_address)
+            if (rsvp_nums == addr_nums):
+                found_rsvp = rsvp
+                break
+
+        if not found_rsvp:
+            raise forms.ValidationError(
+                self.error_messages['rsvp_fail'],
+                code='address_fail',
+                params={'address':address, 'last_name':last_name})
+
+        # Note the RSVP
+        self.rsvp = found_rsvp
 
         return self.cleaned_data
 
