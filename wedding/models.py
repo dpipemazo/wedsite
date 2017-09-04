@@ -30,12 +30,12 @@ class Profile(models.Model):
         auto_now=True,
         help_text="Time at which the profile was updated")
 
-    def __unicode__(self):
+    def __str__(self):
         """
         Function for converting the model into a string. This will allow us
         to have the name show up in the django admin UI
         """
-        return self.user.__unicode__()
+        return self.user.__str__()
 
 
 class RSVP(models.Model):
@@ -73,7 +73,7 @@ class RSVP(models.Model):
         auto_now=True,
         help_text="Time at which the profile was updated")
 
-    def __unicode__(self):
+    def __str__(self):
         """
         Function for converting the model into a string. This will allow us
         to have the name show up in the django admin UI
@@ -147,7 +147,7 @@ class RSVPPerson(models.Model):
         auto_now=True,
         help_text="Time at which the profile was updated")
 
-    def __unicode__(self):
+    def __str__(self):
         """
         Function for converting the model into a string. This will allow us
         to have the name show up in the django admin UI

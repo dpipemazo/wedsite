@@ -20,12 +20,14 @@ and will eventually be deployed to the public domain
 To begin development, you'll need to contact Dan to get added to the heroku
 app and github repo. You'll also need to install the heroku CLI and log in.
 
-Once you have heroku set up, clone the repo, cd into it and set up a virtualenv:
+Once you have heroku set up, clone the repo, cd into it and set up a virtualenv.
+Note: We're using python 3.6 in heroku, so it's important that we test with
+python 3.6 locally as well.
 
 ```
 git clone https://github.com/dankuna/wedding_site.git
 cd wedding_site
-virtualenv ENV
+virtualenv -p python3 ENV
 source ENV/bin/activate
 ```
 
