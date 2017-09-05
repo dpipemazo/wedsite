@@ -168,7 +168,7 @@ EMAIL_USE_TLS = True
 #
 RAVEN_CONFIG = {
     'dsn': os.environ.get('SENTRY_DSN'),
-    'release': raven.fetch_git_sha(os.path.dirname(os.pardir)),
+    'release': raven.fetch_git_sha(BASE_DIR),
 }
 
 # Timezone detection
