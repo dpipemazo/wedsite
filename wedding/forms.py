@@ -37,6 +37,7 @@ class CreateUserForm(forms.Form):
     )
 
     invite_street2 = forms.CharField(
+        required=False,
         label="Street Address Line 2",
         max_length=256,
         widget=forms.TextInput(
@@ -51,7 +52,7 @@ class CreateUserForm(forms.Form):
     )
 
     invite_state = forms.CharField(
-        label="State",
+        label="State/Country",
         max_length=256,
         widget=forms.TextInput(
             attrs={'size':FORM_FIELD_WIDTH}),
@@ -94,7 +95,7 @@ class CreateUserForm(forms.Form):
 
     def get_address(self):
         return self.cleaned_data.get('invite_street1') + " " + \
-            self.cleaned_data.get('invite_street2') + " " + \
+            self.cleaned_data.get('invite_street2', '') + " " + \
             self.cleaned_data.get('invite_city') + " " + \
             self.cleaned_data.get('invite_state') + " " + \
             self.cleaned_data.get('invite_zip')

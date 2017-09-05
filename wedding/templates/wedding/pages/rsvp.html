@@ -8,6 +8,36 @@ RSVP
 {% block content %}
 <div id="contact" class="container-fluid text-center page-container">
   <h1 class="page-header">RSVP</h1>
+
+    {% if updated %}
+        <div class="alert alert-success">
+                <strong>Thank you! RSVP Successfully Updated at {% now "h:i A \o\n F jS, Y" %}</strong>
+        </div>
+    {% endif %}
+
+    {% if new_account %}
+        <div class="alert alert-success">
+                <strong>Thank you for creating an account! Please update your RSVP below</strong>
+        </div>
+    {% endif %}
+
+    {% for form in formset %}
+        {% if form.errors %}
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <div class="alert alert-danger">
+                        <strong>Item {{ field.label_tag }} {{ error|escape }}</strong>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+                <div class="alert alert-danger">
+                    <strong>{{ error|escape }}</strong>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+
     <form method="post" action="{% url 'rsvp' %}">
         {{ formset.management_form }}
         {% csrf_token %}
