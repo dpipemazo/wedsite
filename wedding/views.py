@@ -42,7 +42,7 @@ class RSVPView(View):
             formset = RSVPPersonFormSet(request.POST, request.FILES, instance=rsvp)
             if formset.is_valid:
                 formset.save()
-                return HttpResponseRedirect(request.get_full_path())
+                return HttpResponseRedirect(request.get_full_path() + '?updated=y')
             else:
                 return render(request, 'wedding/pages/rsvp.html', {'formset': formset})
         else:
@@ -51,8 +51,10 @@ class RSVPView(View):
     def get(self, request):
         if request.user.is_authenticated:
             rsvp = self.get_object()
+            updated = True if request.GET.get('updated', '') else False
             formset = RSVPPersonFormSet(instance=rsvp)
-            return render(request, 'wedding/pages/rsvp.html', {'formset': formset})
+            return render(request, 'wedding/pages/rsvp.html',
+                {'formset': formset}, {'updated':updated})
         else:
             return redirect_to_login(request.get_full_path())
 
