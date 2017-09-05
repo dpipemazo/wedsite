@@ -15,6 +15,12 @@ RSVP
         </div>
     {% endif %}
 
+    {% if new_account %}
+        <div class="alert alert-success">
+                <strong>Thank you for creating an account! Please update your RSVP below</strong>
+        </div>
+    {% endif %}
+
     {% for form in formset %}
         {% if form.errors %}
             {% for field in form %}

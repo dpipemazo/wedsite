@@ -55,11 +55,13 @@ class RSVPView(View):
         if request.user.is_authenticated:
             rsvp = self.get_object()
             updated = True if (request.GET.get('updated', '') == 'y') else False
+            new_account = True if (request.GET.get('new_account', '') == 'y') else False
             formset = RSVPPersonFormSet(instance=rsvp)
             return render(request, 'wedding/pages/rsvp.html',
                 {
                     'formset': formset,
-                    'updated': updated
+                    'updated': updated,
+                    'new_account': new_account
                 }
             )
         else:
@@ -73,7 +75,7 @@ class CreateAccountView(SuccessURLAllowedHostsMixin, FormView):
     a free RSVP that agrees with the user's info.
     """
     form_class = CreateUserForm
-    success_url = "/rsvp"
+    success_url = "/rsvp?new_account=y"
     template_name = 'registration/create_user.html'
 
     @method_decorator(sensitive_post_parameters())
