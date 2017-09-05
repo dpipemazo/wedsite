@@ -52,7 +52,7 @@ class CreateUserForm(forms.Form):
     )
 
     invite_state = forms.CharField(
-        label="State",
+        label="State/Country",
         max_length=256,
         widget=forms.TextInput(
             attrs={'size':FORM_FIELD_WIDTH}),
