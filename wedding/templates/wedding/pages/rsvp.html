@@ -1,19 +1,17 @@
 {% extends "wedding/blocks/base.html" %}
 {% load static %}
-{% load tz %}
 
 {% block title %}
 RSVP
 {% endblock %}
 
 {% block content %}
-{% localtime on %}
 <div id="contact" class="container-fluid text-center page-container">
   <h1 class="page-header">RSVP</h1>
 
     {% if updated %}
         <div class="alert alert-success">
-                <strong>RSVP Successfully Updated at {% now "jS F Y H:i" %}</strong>
+                <strong>Thank you! RSVP Successfully Updated at {% now "h:i A \o\n F jS, Y" %}</strong>
         </div>
     {% endif %}
 
@@ -71,5 +69,4 @@ RSVP
         <input type="submit" class="login-button" value="Update" />
     </form>
 </div>
-{% endlocaltime %}
 {% endblock %}

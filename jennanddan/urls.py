@@ -25,4 +25,7 @@ urlpatterns = [
 
     # Account stuff
     url(r'^accounts/', include('django.contrib.auth.urls')),
+
+    # Timezone detection
+    url(r'^tz_detect/', include('tz_detect.urls')),
 ]
