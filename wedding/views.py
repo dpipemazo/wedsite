@@ -37,7 +37,8 @@ class RSVPView(View):
     otherwise will allow them to use the RSVP system
     """
     def get_object(self, queryset=None):
-        return self.request.user.profile.rsvp
+        profile = self.request.user.profile
+        return profile.rsvp if profile else None
 
     def post(self, request):
         if request.user.is_authenticated:
@@ -59,7 +60,7 @@ class RSVPView(View):
             rsvp = self.get_object()
             updated = True if (request.GET.get('updated', '') == 'y') else False
             new_account = True if (request.GET.get('new_account', '') == 'y') else False
-            formset = RSVPPersonFormSet(instance=rsvp)
+            formset = RSVPPersonFormSet(instance=rsvp) if rsvp else []
             return render(request, 'wedding/pages/rsvp.html',
                 {
                     'formset': formset,
