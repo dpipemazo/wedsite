@@ -37,8 +37,10 @@ class RSVPView(View):
     otherwise will allow them to use the RSVP system
     """
     def get_object(self, queryset=None):
-        profile = self.request.user.profile
-        return profile.rsvp if profile else None
+        try:
+            return self.request.user.profile.rsvp
+        except RSVP.DoesNotExist:
+            return None
 
     def post(self, request):
         if request.user.is_authenticated:

@@ -21,6 +21,12 @@ RSVP
         </div>
     {% endif %}
 
+    {% if not formset %}
+        <div class="alert alert-danger">
+                <strong>Your account doesn't seem to have an RSVP. Please contact the site admin</strong>
+        </div>
+    {% endif %}
+
     {% for form in formset %}
         {% if form.errors %}
             {% for field in form %}
@@ -72,7 +78,10 @@ RSVP
                 </table>
             </div>
         {% endfor %}
-        <input type="submit" class="login-button" value="Update" />
+
+        {% if formset %}
+            <input type="submit" class="login-button" value="Update" />
+        {% endif %}
     </form>
 </div>
 {% endblock %}
