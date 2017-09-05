@@ -10,10 +10,10 @@ Login
     <h1 class="page-header">Account Login</h1>
 
     {% if form.errors %}
-    <p>Your username and password didn't match. Please try again.</p>
-    {% endif %}
-
-    {% if next != "/" %}
+        <div class="alert alert-danger">
+            <strong>Error logging in. Please try again.</strong>
+        </div>
+    {% elif next != "/" %}
         <div class="alert alert-warning">
             <strong>Please log in or create an account to view this page. Thank you!</strong>
         </div>
