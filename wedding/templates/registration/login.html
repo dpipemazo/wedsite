@@ -14,12 +14,9 @@ Login
     {% endif %}
 
     {% if next != "/" %}
-        {% if user.is_authenticated %}
-        <p>Your account doesn't have access to this page. To proceed,
-        please login with an account that has access.</p>
-        {% else %}
-        <p>Please log in to see this page.</p>
-        {% endif %}
+        <div class="alert alert-warning">
+            <strong>Please log in or create an account to view this page. Thank you!</strong>
+        </div>
     {% endif %}
 
     <div class="row">
