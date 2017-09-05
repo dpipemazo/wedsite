@@ -27,7 +27,14 @@ Account Creation
     <div class="row">
         <div class="col-sm-12 base-font text-center">
             <div align="center">
-                <h2> Account Information </h2>
+                <p class="account-create-text">
+                    Please fill in the information below.
+                    <br><br>
+                    Note that only one account may be created per RSVP, so
+                    please use an email/password combination that you're
+                    comfortable sharing with all members of your RSVP party so
+                    that they may access the site's features.
+                </p>
                     <form method="post" action="{% url 'create-account' %}">
                     {% csrf_token %}
                     <table>
