@@ -177,3 +177,6 @@ RAVEN_CONFIG = {
 # app's most popular countries first.
 # Defaults to the top Internet using countries.
 TZ_DETECT_COUNTRIES = ('US', 'CN')
+
+# URL to redirect to after logging in
+LOGIN_REDIRECT_URL = "/"

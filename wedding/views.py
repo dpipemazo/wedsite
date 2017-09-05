@@ -26,7 +26,10 @@ class StaticView(View):
     template = None
 
     def get(self, request):
-        return render(request, "wedding/pages/" + self.template, {})
+        if request.user.is_authenticated or (request.get_full_path() == reverse('index')):
+            return render(request, "wedding/pages/" + self.template, {})
+        else:
+            return redirect_to_login(request.get_full_path())
 
 class RSVPView(View):
     """
