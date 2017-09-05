@@ -97,8 +97,15 @@
 
 <!-- Content, expected to be overwritten -->
 {% block content %}
-
 {% endblock %}
+
+<!-- footer -->
+<footer class="footer">
+  <div class="container text-muted base-font">
+    <span class="text-muted">Copyright © {% now "Y" %} Dan Pipe-Mazo, Jennifer Fang and Sean Keenan</span>
+    <div class="pull-right">Having trouble? <a href="mailto:help@mg.jennanddan.love"> Get Help</a></div>
+  </div>
+</footer>
 
 {% block bootstrap %}
 
