@@ -44,8 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'easy_maps',
-    'raven.contrib.django.raven_compat',
-]
+    'raven.contrib.django.raven_compat',]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
