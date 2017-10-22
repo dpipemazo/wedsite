@@ -20,6 +20,35 @@ and will eventually be deployed to the public domain
 To begin development, you'll need to contact Dan to get added to the heroku
 app and github repo. You'll also need to install the heroku CLI and log in.
 
+The general wiki for using heroku + Django can be found
+[here](https://devcenter.heroku.com/articles/deploying-python).
+
+### Install Heroku and Postgres
+
+Visit the CLI [install page](https://devcenter.heroku.com/articles/heroku-cli)
+to install the CLI. Once you've installed the CLI you should log into it
+```
+heroku login
+```
+
+Postgres can be installed from [here](http://postgresapp.com/). Once you've
+installed `postgres` you'll need to add the contents to your path so that things
+work. Edit your `~/.bash_profile` (or similar, based on OS) to ionclude
+```
+PATH=$PATH:/path/to/postgres/bin
+```
+
+Then, source your `/.bash_profile` to begin using it!
+```
+source ~/.bash_profile
+```
+
+### Python Version
+
+You'll need `python3` to run the site, with version `3.6` for best compatiblity.
+
+### Set up the site
+
 Once you have heroku set up, clone the repo, cd into it and set up a virtualenv.
 Note: We're using python 3.6 in heroku, so it's important that we test with
 python 3.6 locally as well.
