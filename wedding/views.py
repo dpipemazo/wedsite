@@ -31,6 +31,15 @@ class StaticView(View):
         else:
             return redirect_to_login(request.get_full_path())
 
+class StaticViewNoAuth(View):
+    """
+    Basic static view. Shows a template back
+    """
+    template = None
+
+    def get(self, request):
+        return render(request, "wedding/pages/" + self.template, {})
+
 class RSVPView(View):
     """
     RSVP View. Will redirect to login page if the user isn't authenticated,
