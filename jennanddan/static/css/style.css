@@ -11,6 +11,7 @@ html {
 .base-font {
   font-family: 'Montserrat', cursive;
   font-weight: 200;
+  color: #333333;
 }
 
 .base-font-bold {
@@ -19,7 +20,8 @@ html {
 }
 
 .page-header {
-  font-family: 'Hammersmith One', sans-serif;
+  font-size:60px;
+  font-family: 'Great Vibes', cursive;
   margin-top:30px;
   margin-bottom:20px;
 }
@@ -28,8 +30,9 @@ html {
   padding-top:50px;
 }
 
-.name-text {
-  margin-top: 40vh;
+.main-header-text {
+  font-size: 10vw;
+  margin-top: 24vh;
   font-family: 'Great Vibes', cursive;
 }
 
@@ -39,7 +42,8 @@ html {
 }
 
 .venue-date-text {
-  margin-top: 30vh;
+  font-size:3vw;
+  margin-top:24px;
 }
 
 .hr-bar {
