@@ -9,23 +9,40 @@ Gifts
 {% endblock %}
 
 {% block content %}
-<div id="gifts" class="container-fluid text-center page-container">
-  <h1 class="page-header">Gifts</h1>
+<div id="gifts" class="container-fluid page-container">
+  <h1 class="page-header text-center">Gifts</h1>
 
   <!-- Row with wedding map and venue info -->
-  <div class="row">
-    <div class="col-sm-6 base-font text-center">
-      <h2> Donations </h2>
+  <div class="row padded-row">
+    <div class="col-sm-12 base-font text-justify">
+      <h2 class="text-center">Chinese Tradition</h2>
       <p>
-      There are some amazing charities who could use a gift more than we need a new set of silverware. Please consider a donation to one of the charities below in lieu of or in addition to a gift. <br><br>
-      We'll update this list with links shortly.
+      Traditional Chinese wedding gifts are <a href="https://en.wikipedia.org/wiki/Red_envelope">hóngbāo (紅包)</a>, monetary gifts in red envelopes. We'll have a supply of envelopes at the wedding and an area to leave them in if you'd like to go this route. We're planning on using these gifts to help with a down payment on an apartment!
+      </p>
+    </div>
+  </div>
+  <div class="row padded-row">
+    <div class="col-sm-12 base-font text-justify">
+      <h2 class=text-center>Registry</h2>
+      <p>
+      We optionally have a wedding registry on <a href="https://smile.amazon.com/wedding/jennifer-fang-dan-pipe-mazo-palos-verdes-estates-february-2018/registry/19UQEW95QJYZ">Amazon Smile</a>. Amazon Smile is exactly the same as the regular Amazon, except 0.5% of your purchase will be donated to a charity of your choice. We'd love if you selected the "Harbor Emergency Medical Education Foundation" as the proceeds will be directed to the Resident Education Fund at Jennifer's hospital. You can select the charity you're supporting at the top of the page, directly beneath the search bar as seen in the image below.
+      <br><br>
+      <div class=text-center>
+        <a href="https://smile.amazon.com/wedding/jennifer-fang-dan-pipe-mazo-palos-verdes-estates-february-2018/registry/19UQEW95QJYZ"><image src="{% static 'images/amazon_smile.png' %}" class="img-responsive rounded half-width-image float-center" alt="Amazon Smile Registry"/>
+        </a>
+      </div>
+      </p>
+    </div>
+  </div>
+  <div class="row vertical-aligned-row padded-row">
+    <div class="col-sm-6 base-font text-justify">
+      <h2 class=text-center>Donations</h2>
+        <p>
+        Dan's sister Sara is currently serving in the Peace Corps in Georgia. She's helping to organize a campaign, "I Believe in Santa Claus", which provides gifts for Georgian children around the holidays. Gifts can range from new books or dolls to new bikes. The value of the gifts are about $5-$40. Please consider also making a donation to this great cause as a part of your gift. The deadline for donations is December 15, 2017. Please send Sara an email at <a href="mailto:someone@example.com?Subject=Gift%20Donation" target="_top">sara.pipemazo AT gmail DOT com</a> to coordinate the best way to donate.
       </p>
     </div>
     <div class="col-sm-6 base-font text-center">
-      <h2> Registries </h2>
-      <p>
-      We'll update this list with our registries when we've, well, registered :)
-      </p>
+      <iframe src="https://www.youtube.com/embed/1AnfQcqMRlw" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 </div>

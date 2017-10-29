@@ -28,6 +28,16 @@ html {
 
 .page-container {
   padding-top:50px;
+  max-width: 970px;
+}
+
+.padded-row {
+  margin-top:20px;
+}
+
+.half-width-image {
+  max-width: 50%;
+  margin: 0 auto;
 }
 
 .main-header-text {
