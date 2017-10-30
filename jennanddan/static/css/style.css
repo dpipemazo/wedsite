@@ -47,7 +47,6 @@ html {
 }
 
 .wedding-text {
-  margin-top: 5vh;
   font-family: 'Great Vibes', cursive;
 }
 
@@ -67,6 +66,13 @@ html {
   margin-bottom: 50px;
   margin-top: 50px;
 }
+
+.wedding-map {
+  height:300px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
 
 .vertical-aligned-row {
     display: flex;
@@ -99,7 +105,6 @@ html {
 .account-create-text {
   width: 50%;
 }
-
 .footer {
   position: absolute;
   bottom: 0;
