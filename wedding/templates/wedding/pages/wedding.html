@@ -6,57 +6,47 @@
 Wedding
 {% endblock %}
 
-{% block style %}
-  .main_jumbotron {
-      background-image: url({% static 'images/la_venta_ceremony.jpg' %});
-      background-size: cover;
-      background-position: top; /* Centers - top to avoid head chop-off */
-      height: 100vh;
-      margin-bottom:0px;
-  }
-{% endblock %}
-
 {% block content %}
-<div class="main_jumbotron jumbotron">
-  <div class="container-fluid text-center">
-      <h1 class="wedding-text" style="color:white">
-        Sunday February 18, 2018
-      </h1>
-  </div>
-</div>
+<div id="wedding" class="container-fluid page-container">
+  <h1 class="page-header text-center">Ceremony and Reception</h1>
 
-<div id="wedding" class="container-fluid text-center page-container">
-  <h1 class="page-header">Ceremony and Reception</h1>
+  <div class=row>
+    <h1 class="wedding-text text-center">
+        Sunday, February 18, 2018
+    </h1>
+  </div>
 
   <!-- Row with wedding map and venue info -->
-  <div class="row vertical-aligned-row">
-    <div class="col-sm-4 base-font text-center">
-      {% easy_map "796 Vía Del Monte, Palos Verdes Estates, CA 90274" 100 300 5 using 'wedding/blocks/responsive_map.html' %}
-    </div>
-    <div class="col-sm-4 base-font text-center">
-      <h2 class="base-font">Venue</h2>
-      <p> La Venta Inn <br>
-          796 Vía Del Monte, Palos Verdes Estates, CA 90274 <br>
-          (310) 373-0123 <br>
+  <div class="row">
+    <div class="col-sm-4 text-justify">
+      <h2 class="text-center">La Venta Inn</h2>
+        <p>
+          796 Vía Del Monte<br>
+          Palos Verdes Estates, CA 90274 <br><br>
+          (310) 373-0123 <br><br>
           <a href="https://www.google.com/maps?saddr=My+Location&daddr=La+Venta+Inn,+796+Vía+Del+Monte,+Palos+Verdes+Estates,+CA+90274">Directions</a><br>
           Parking available on-site.
+        </p>
+    </div>
+    <div class="col-sm-4 text-justify">
+      <h2 class="text-center">Ceremony<br><small class="text-muted">4:00PM</small></h2>
+        <p>
+          <a href="https://www.thespruce.com/semi-formal-attire-guidelines-1216504">Semiformal attire</a><br><br>
+          Ceremony will be outdoors with ideal weather, otherwise indoors. Expect 65-70F and (hopefully) sunny.
+        </p>
+    </div>
+    <div class="col-sm-4 text-justify">
+      <h2 class="text-center">Reception<br><small class="text-muted">Following Ceremony - 9:00PM</small></h2>
+      <p>
+          Cocktail hour during sunset<br><br>
+          We'll then move indoors for dinner, dancing, and other wedding-related festivities.
       </p>
     </div>
-    <div class="col-sm-4 base-font text-center">
-      <h2 class="base-font">Ceremony & Reception</h2>
-      <h3>Ceremony</h3>
-      <p> 4:00 PM on Sunday, February 18, 2018 <br>
-          Beach formal attire, please<br>
-          Ceremony will be outdoors with ideal weather, indoors else
-      </p>
-      <h3>Reception</h3>
-      <p>
-          Cocktail hour during sunset immediately follows ceremony. Be sure to
-          sign the photo guest book using the photo booth!<br>
-          We'll then move indoors for dinner, dancing and other wedding-related
-          festivities.<br>
-          The evening will wrap up around 9:00PM.
-      </p>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <h2 class="text-center">Map</h2>
+      {% easy_map "796 Vía Del Monte, Palos Verdes Estates, CA 90274" 100 100 5 using 'wedding/blocks/responsive_map.html' %}
     </div>
   </div>
 </div>

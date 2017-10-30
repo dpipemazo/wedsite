@@ -11,6 +11,7 @@ html {
 .base-font {
   font-family: 'Montserrat', cursive;
   font-weight: 200;
+  color: #333333;
 }
 
 .base-font-bold {
@@ -19,27 +20,39 @@ html {
 }
 
 .page-header {
-  font-family: 'Hammersmith One', sans-serif;
+  font-size:60px;
+  font-family: 'Great Vibes', cursive;
   margin-top:30px;
   margin-bottom:20px;
 }
 
 .page-container {
   padding-top:50px;
+  max-width: 970px;
 }
 
-.name-text {
-  margin-top: 40vh;
+.padded-row {
+  margin-top:20px;
+}
+
+.half-width-image {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.main-header-text {
+  font-size: 10vw;
+  margin-top: 24vh;
   font-family: 'Great Vibes', cursive;
 }
 
 .wedding-text {
-  margin-top: 5vh;
   font-family: 'Great Vibes', cursive;
 }
 
 .venue-date-text {
-  margin-top: 30vh;
+  font-size:3vw;
+  margin-top:24px;
 }
 
 .hr-bar {
@@ -54,6 +67,13 @@ html {
   margin-top: 50px;
 }
 
+.wedding-map {
+  height:300px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+
 .vertical-aligned-row {
     display: flex;
     align-items: center;
@@ -62,6 +82,10 @@ html {
 .login-box {
   padding-top:10px;
   padding-bottom:10px;
+}
+
+.login-text {
+  padding-right: 10px;
 }
 
 .rsvp-box {
@@ -84,6 +108,10 @@ html {
 
 .account-create-text {
   width: 50%;
+}
+
+.rsvp-text {
+  padding-bottom: 20px;
 }
 
 .footer {

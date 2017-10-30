@@ -7,13 +7,13 @@ Explore LA!
 {% endblock %}
 
 {% block content %}
-<div id="travel" class="container-fluid text-center page-container">
-  <h1 class="page-header">Explore LA!</h1>
+<div id="travel" class="container-fluid base-font page-container">
+  <h1 class="page-header text-center">Explore LA!</h1>
 
   <!-- Row with wedding map and venue info -->
   <div class="row">
-    <div class="col-sm-4 base-font text-center">
-      <h2> The South Bay </h2>
+    <div class="col-sm-4 text-justify">
+      <h2 class="text-center"> The South Bay </h2>
 
       {% easy_map "South Bay, Los Angeles County, CA" 100 100 10 using 'wedding/blocks/explore_map.html'%}
 
@@ -33,8 +33,8 @@ Explore LA!
        with wedding festivities, though her talented colleagues will assuredly take care of you if need be.
       </p>
     </div>
-    <div class="col-sm-4 base-font text-center">
-      <h2> Downtown </h2>
+    <div class="col-sm-4 text-justify">
+      <h2 class="text-center"> Downtown </h2>
 
       {% easy_map "111 S Grand Ave, Los Angeles, CA 90012" 100 100 10 using 'wedding/blocks/explore_map.html' %}
 
@@ -51,8 +51,8 @@ Explore LA!
       If you're looking for food recommendations, don't hesitate to contact Steven as he and his crew have likely eaten at every restaraunt in LA at this point and can recommend their favorites.
       </p>
     </div>
-    <div class="col-sm-4 base-font text-center">
-      <h2> Westside </h2>
+    <div class="col-sm-4 text-justify">
+      <h2 class="text-center"> Westside </h2>
 
       {% easy_map "Westside, Los Angeles, CA" 100 100 10 using 'wedding/blocks/explore_map.html' %}
 

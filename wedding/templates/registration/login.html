@@ -27,11 +27,11 @@ Login
                     {% csrf_token %}
                     <table>
                     <tr>
-                        <td class="login-box">Email Address</td>
+                        <td class="login-box login-text">Email Address:</td>
                         <td class="login-box">{{ form.username }}</td>
                     </tr>
                     <tr>
-                        <td class="login-box">{{ form.password.label_tag }}</td>
+                        <td class="login-box login-text">Password:</td>
                         <td class="login-box">{{ form.password }}</td>
                     </tr>
                     </table>
