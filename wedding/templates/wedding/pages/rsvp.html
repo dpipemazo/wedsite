@@ -8,6 +8,11 @@ RSVP
 {% block content %}
 <div id="contact" class="container-fluid text-center page-container">
   <h1 class="page-header">RSVP</h1>
+    <div class="row">
+        <div class="col-sm-12 text-justify rsvp-text">
+            Please update and submit your information below as soon as possible and <b>no later than December 31, 2017</b>. The meal will be a family-style meal in the Chinese tradition with special arrangements made for those who note the requirement below. Please use the "special request" box to indicate anything dietary we should know about not covered by the checkboxes or to just leave us a nice message :). Thanks!
+        </div>
+    </div>
 
     {% if updated %}
         <div class="alert alert-success">
@@ -50,32 +55,40 @@ RSVP
         {% for form in formset %}
             {{ form.id }}
             <div class="row base-font" align="center">
-                <table>
-                    <tr>
-                        <td class="rsvp-box">Name</td>
-                        <td class="rsvp-box">Attend Friday Dinner?</td>
-                        <td class="rsvp-box">Attend Wedding?</td>
-                        <td class="rsvp-box">Child?</td>
-                        <td class="rsvp-box">Kosher</td>
-                        <td class="rsvp-box">Vegetarian</td>
-                        <td class="rsvp-box">Vegan</td>
-                        <td class="rsvp-box">Gluten Free</td>
-                        <td class="rsvp-box">Other</td>
-                        <td class="rsvp-box">Special Request</td>
-                    </tr>
-                    <tr>
-                        <td class="rsvp-box">{{ form.name }} </td>
-                        <td class="rsvp-box">{{ form.is_attending_cny }} </td>
-                        <td class="rsvp-box">{{ form.is_attending_wedding }} </td>
-                        <td class="rsvp-box">{{ form.is_child }} </td>
-                        <td class="rsvp-box">{{ form.dietary_kosher }} </td>
-                        <td class="rsvp-box">{{ form.dietary_vegetarian }} </td>
-                        <td class="rsvp-box">{{ form.dietary_vegan }} </td>
-                        <td class="rsvp-box">{{ form.dietary_gluten_free }} </td>
-                        <td class="rsvp-box">{{ form.dietary_other }} </td>
-                        <td class="rsvp-box">{{ form.special_requests }} </td>
-                    </tr>
-                </table>
+                <div class="col-sm-6">
+                    <table>
+                        <tr>
+                            <td class="rsvp-box">Name</td>
+                            <td class="rsvp-box">Attend Friday Dinner?</td>
+                            <td class="rsvp-box">Attend Wedding?</td>
+                            <td class="rsvp-box">Child?</td>
+                        </tr>
+                        <tr>
+                            <td class="rsvp-box">{{ form.name }} </td>
+                            <td class="rsvp-box">{{ form.is_attending_cny }} </td>
+                            <td class="rsvp-box">{{ form.is_attending_wedding }} </td>
+                            <td class="rsvp-box">{{ form.is_child }} </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-sm-6">
+                    <table>
+                        <tr>
+                            <td class="rsvp-box">Kosher</td>
+                            <td class="rsvp-box">Vegetarian</td>
+                            <td class="rsvp-box">Vegan</td>
+                            <td class="rsvp-box">Gluten Free</td>
+                            <td class="rsvp-box">Special Request</td>
+                        </tr>
+                        <tr>
+                            <td class="rsvp-box">{{ form.dietary_kosher }} </td>
+                            <td class="rsvp-box">{{ form.dietary_vegetarian }} </td>
+                            <td class="rsvp-box">{{ form.dietary_vegan }} </td>
+                            <td class="rsvp-box">{{ form.dietary_gluten_free }} </td>
+                            <td class="rsvp-box">{{ form.special_requests }} </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         {% endfor %}
 
