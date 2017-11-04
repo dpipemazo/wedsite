@@ -77,6 +77,8 @@ html {
 .vertical-aligned-row {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .login-box {
