@@ -132,11 +132,11 @@ html {
 }
 
 .footer-credit {
-  padding-left: 15px;
+  padding-left: 20px;
 }
 
 .footer-help {
-  padding-right: 15px;
+  padding-right: 20px;
   text-align: right;
 }
 
@@ -162,4 +162,8 @@ html {
 
 .contact-item {
   padding-right: 15px;
+}
+
+.nowrap {
+  white-space: nowrap;
 }
