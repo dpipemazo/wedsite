@@ -126,3 +126,26 @@ html {
   background-color: #f5f5f5;
 }
 
+.flex-display {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+  flex-wrap: wrap;
+}
+
+.flex-col {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+  flex-direction: column;
+}
+
+.contact-fill {
+  flex-grow: 1;
+}
+
+.contact-item {
+  padding-right: 15px;
+}
