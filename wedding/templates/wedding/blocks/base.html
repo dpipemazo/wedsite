@@ -100,16 +100,28 @@
 {% endblock %}
 
 <!-- Content, expected to be overwritten -->
-{% block content %}
-{% endblock %}
+<div class="content">
+  {% block content %}
+  {% endblock %}
+</div>
 
 <!-- footer -->
-<footer class="footer">
-  <div class="container text-muted">
-    <span class="text-muted">Copyright © {% now "Y" %} Dan Pipe-Mazo, Jennifer Fang and Sean Keenan</span>
-    <div class="pull-right">Having trouble? <a href="mailto:help@mg.jennanddan.love"> Get Help</a></div>
-  </div>
-</footer>
+<div class="footer-container">
+  <footer class="footer">
+    <div class="row text-muted">
+      <div class="col-xs-8">
+        <p class="footer-credit">
+          <span class="nowrap">© {% now "Y" %}</span> <span class="nowrap">Dan Pipe-Mazo</span>, <span class="nowrap">Jennifer Fang</span> & <span class="nowrap">Sean Keenan</span>
+        </p>
+      </div>
+      <div class="col-xs-4">
+        <p class="footer-help">
+          <span class="nowrap">Site trouble?</span> <span class="nowrap"><a href="mailto:help@mg.jennanddan.love">Get Help</a></span>
+        </p>
+      </div>
+    </div>
+  </footer>
+</div>
 
 {% block bootstrap %}
 
