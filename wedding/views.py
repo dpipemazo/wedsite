@@ -108,10 +108,15 @@ class CreateAccountView(SuccessURLAllowedHostsMixin, FormView):
         link in the RSVP
         """
 
+        # Make the database username the lowercase version of what's been
+        #   entered. This will force uniqueness among the names for all
+        #   new users. Checking is done in a case-insensitive manner
+        username = form.cleaned_data.get('email_address').lower()
+
         # Finally, we want to make the user object and the profile object
         #   and link them together
         user = User.objects.create_user(
-            form.cleaned_data.get('email_address'),
+            username,
             form.cleaned_data.get('email_address'),
             form.cleaned_data.get('password1'),
             first_name=form.cleaned_data.get('first_name'),
@@ -129,7 +134,7 @@ class CreateAccountView(SuccessURLAllowedHostsMixin, FormView):
         form.rsvp.save()
 
         user_cache = authenticate(
-            username=form.cleaned_data.get('email_address'),
+            username=username,
             password=form.cleaned_data.get('password1'))
         if user_cache is None:
             return HttpResponse("Failed to log in user", status=400)
