@@ -32,6 +32,9 @@ ALLOWED_HOSTS = [
     'www.jennanddan.love',
     'localhost']
 
+# Change out authentication backend to case-inesnsitive one for users.
+AUTHENTICATION_BACKENDS = ('wedding.backends.CaseInsensitiveModelBackend', )
+
 
 # Application definition
 
