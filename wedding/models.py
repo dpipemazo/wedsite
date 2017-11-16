@@ -75,6 +75,7 @@ class RSVP(models.Model):
 
     # RSVP Comment
     comment = models.TextField(
+        blank=True,
         help_text="RSVP Comment")
 
     def __str__(self):
