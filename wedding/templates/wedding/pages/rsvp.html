@@ -10,7 +10,9 @@ RSVP
   <h1 class="page-header">RSVP</h1>
     <div class="row">
         <div class="col-sm-12 text-justify rsvp-text">
-            Please update and submit your information below as soon as possible and <b>no later than December 31, 2017</b>. The meal will be a family-style meal in the Chinese tradition with special arrangements made for those who note the requirement below. Please use the "special request" box to indicate anything dietary we should know about not covered by the checkboxes or to just leave us a nice message :). Thanks!
+            Please update and submit your information below as soon as possible and <b>no later than December 31, 2017</b>.
+
+            All meals will be served family-style (as is Chinese tradition) with special arrangements made for those who note the requirement below. Please use the "special request" box to indicate anything dietary we should know about not covered by the checkboxes. There's also a comment box at the bottom that can be used for sending a personal message to the bride and groom. Thanks!
         </div>
     </div>
 
@@ -52,10 +54,20 @@ RSVP
     <form method="post" action="{% url 'rsvp' %}">
         {{ formset.management_form }}
         {% csrf_token %}
+
+        <div class="base-font">
+            <h2 class="text-center"> Attendees </h2>
+
+            <p>
+                Please mark below the attendance and dietary choices for all attendees.<br>
+                For information about the events please reference the <a href="{% url 'events' %}">Weekend Events Schedule</a>
+            </p>
+
         {% for form in formset %}
             {{ form.id }}
+            <hr>
             <div class="row base-font" align="center">
-                <div class="col-sm-6">
+                <div class="col-md-6">
                     <table>
                         <tr>
                             <td class="rsvp-box">Name</td>
@@ -71,7 +83,7 @@ RSVP
                         </tr>
                     </table>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-md-6">
                     <table>
                         <tr>
                             <td class="rsvp-box">Kosher</td>
@@ -91,9 +103,21 @@ RSVP
                 </div>
             </div>
         {% endfor %}
+        </div>
+
+        <hr>
+
+        <div class="row base-font" align="center">
+            <h2 class="text-center"> Comment </h2>
+            <p> Please use the section below to add a general comment to your response<br></p>
+
+            {{ rsvp_form.comment }}
+        </div>
+
+        <hr>
 
         {% if formset %}
-            <input type="submit" class="login-button" value="Update" />
+            <input type="submit" class="login-button" value="Submit" />
         {% endif %}
     </form>
 </div>

@@ -73,6 +73,10 @@ class RSVP(models.Model):
         auto_now=True,
         help_text="Time at which the profile was updated")
 
+    # RSVP Comment
+    comment = models.TextField(
+        help_text="RSVP Comment")
+
     def __str__(self):
         """
         Function for converting the model into a string. This will allow us

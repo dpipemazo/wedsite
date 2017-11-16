@@ -165,6 +165,22 @@ class CreateUserForm(forms.Form):
 
         return self.cleaned_data
 
+class RSVPForm(forms.ModelForm):
+    """
+    Base RSVP Form
+    """
+    class Meta:
+        model = RSVP
+        fields = ['comment']
+
+    def __init__(self, *args, **kwargs):
+        """
+        Init function to make comment box optional
+        """
+        super(RSVPForm, self).__init__(*args, **kwargs)
+        self.fields['comment'].required = False
+
+# Formset for all RSVP Persons
 RSVPPersonFormSet = inlineformset_factory(RSVP, RSVPPerson,
     fields=(
         'name',
@@ -180,4 +196,6 @@ RSVPPersonFormSet = inlineformset_factory(RSVP, RSVPPerson,
     ),
     extra=0,
     can_delete=False)
+
+
 
