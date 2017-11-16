@@ -171,3 +171,8 @@ html {
 .nowrap {
   white-space: nowrap;
 }
+
+#id_rsvp-comment {
+  width: 80%;
+  height: 100px;
+}

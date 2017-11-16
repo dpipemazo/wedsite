@@ -12,7 +12,7 @@ from django.contrib.auth.views import (
 from django.contrib.auth import (
     authenticate, login)
 from django.contrib.auth.models import User
-from wedding.forms import CreateUserForm, RSVPPersonFormSet
+from wedding.forms import CreateUserForm, RSVPPersonFormSet, RSVPForm
 from wedding.models import Profile, RSVP
 from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import csrf_protect
@@ -54,13 +54,22 @@ class RSVPView(View):
     def post(self, request):
         if request.user.is_authenticated:
             rsvp = self.get_object()
-            formset = RSVPPersonFormSet(request.POST, request.FILES, instance=rsvp)
-            if formset.is_valid:
+
+            # Handle the RSVP update itself
+            rsvp_form = RSVPForm(request.POST, request.FILES, instance=rsvp, prefix='rsvp')
+
+            # Handle the RSVP Persons
+            formset = RSVPPersonFormSet(request.POST, request.FILES, instance=rsvp, prefix='people')
+
+            if formset.is_valid and rsvp_form.is_valid():
                 try:
                     formset.save()
+                    rsvp_form.save()
                     return HttpResponseRedirect(request.get_full_path() + '?updated=y')
                 except ValueError:
                     pass
+
+
 
             return render(request, 'wedding/pages/rsvp.html', {'formset': formset})
         else:
@@ -71,10 +80,12 @@ class RSVPView(View):
             rsvp = self.get_object()
             updated = True if (request.GET.get('updated', '') == 'y') else False
             new_account = True if (request.GET.get('new_account', '') == 'y') else False
-            formset = RSVPPersonFormSet(instance=rsvp) if rsvp else []
+            formset = RSVPPersonFormSet(instance=rsvp, prefix='people') if rsvp else []
+            rsvp_form = RSVPForm(instance=rsvp, prefix='rsvp') if rsvp else None
             return render(request, 'wedding/pages/rsvp.html',
                 {
                     'formset': formset,
+                    'rsvp_form': rsvp_form,
                     'updated': updated,
                     'new_account': new_account
                 }
