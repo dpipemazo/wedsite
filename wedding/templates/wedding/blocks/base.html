@@ -78,10 +78,18 @@
           <ul class="dropdown-menu">
             <li><a href="{% url 'wedding' %}">Ceremony & Reception</a></li>
             <li><a href="{% url 'events' %}">Weekend Events</a></li>
+            <li><a href="{% url 'traditions' %}">Wedding Traditions</a></li>
+            <li><a href="{% url 'team' %}">Meet the Team</a></li>
+          </ul>
+        </li> <!--end wedding weekend dropdown-->
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown"
+            href="#">Travel<span class="caret"></span></a>
+          <ul class="dropdown-menu">
             <li><a href="{% url 'travel' %}">Travel & Lodging</a></li>
             <li><a href="{% url 'explore' %}">Explore LA!</a></li>
           </ul>
-        </li> <!--end wedding weekend dropdown-->
+        </li> <!--end travel dropdown-->
         <li><a href="{% url 'rsvp' %}">RSVP</a></li>
         <li><a href="{% url 'gifts' %}">Gifts</a></li>
         <li><a href="{% url 'contact' %}">Contact</a></li>

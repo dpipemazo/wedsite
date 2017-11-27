@@ -20,6 +20,7 @@ urlpatterns = [
     url(r'^explore$', StaticViewNoAuth.as_view(template="explore.html"), name='explore'),
     url(r'^gifts$', StaticViewNoAuth.as_view(template="gifts.html"), name='gifts'),
     url(r'^team$', StaticViewNoAuth.as_view(template="team.html"), name='team'),
+    url(r'^traditions$', StaticViewNoAuth.as_view(template="traditions.html"), name='traditions'),
     url(r'^rsvp$', RSVPView.as_view(), name='rsvp'),
     url(r'^create-account$', CreateAccountView.as_view(), name='create-account'),
 ]
