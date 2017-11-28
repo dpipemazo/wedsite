@@ -1,0 +1,93 @@
+{% extends "wedding/blocks/base.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% block title %}
+Wedding Traditions
+{% endblock %}
+
+{% block content %}
+<div id="gifts" class="container-fluid page-container">
+  <h1 class="page-header text-center">Wedding Traditions</h1>
+
+  <!-- Row with wedding map and venue info -->
+  <div class="row padded-row">
+    <div class="col-sm-12 base-font text-justify">
+      <h2 class="text-center">Chinese Traditions</h2>
+      <dl>
+        <dt>Double Happiness</dt>
+        <dd style="margin-bottom:8px">
+          The double happiness symbol (pictured below) is a symbol used only in 
+          Chinese weddings. Pronounced shuāngxǐ (双喜), meaning "double 
+          happiness," this symbol is two of the Chinese character for happiness 
+          combined. Items and decorations in Chinese weddings often come in 
+          pairs to symbolize the joining of the happy couple. Look for this 
+          symbol around the wedding, such as on the back of the invitation 
+          envelopes!<br>
+          <div class="text-center">
+            <image src="{% static 'images/DoubleHappiness.png' %}"
+              class="img-responsive center-block half-height-image"
+              alt="Double Happiness">
+          </div>
+        </dd>
+        <dt>Colors</dt>
+        <dd style="margin-bottom:8px">
+          Chinese weddings are typically decked out with red. The color red is a 
+          lucky color in China, associated with happiness and good fortune, so 
+          it is often used in celebrations, New Years, and, of course, 
+          weddings! While our wedding color is primarily purple (Jennifer's 
+          favorite color), we have included some red accents throughout the 
+          wedding. White is avoided at weddings because the color white is 
+          associated with funerals and death. However, in modern Chinese 
+          weddings, the bride may wear a white gown for the ceremony followed by
+          a red gown for the banquet.
+        </dd>
+        <dt>Chinese Rituals</dt>
+        <dd style="margin-bottom:8px">
+          Leading up to the wedding, Chinese traditions may include a series of 
+          trials for the groom and a tea ceremony. Although pre-wedding rituals 
+          can be elaborate, Chinese wedding ceremonies are simple and brief, 
+          as the main event is the wedding banquet!
+        </dd>
+      </dl>
+    </div>
+  </div>
+  <div class="row padded-row">
+    <div class="col-sm-12 base-font text-justify">
+      <h2 class="text-center">Jewish Traditions</h2>
+      <dl>
+        <dt>Ketubah</dt>
+        <dd style="margin-bottom:8px">
+          The ketubah is the Jewish marriage contract, written in egalitarian 
+          Aramaic and English. The Jewish wedding ceremony begins when the 
+          couple signs the ketubah in a private ceremony just before walking 
+          down the aisle to the chuppah.
+        </dd>
+        <dt>Chuppah</dt>
+        <dd style="margin-bottom:8px">
+          The chuppah is the Jewish wedding canopy, which symbolizes our new 
+          home. The four sides of the chuppah are open so that the family and 
+          friends surrounding it feel welcome. The top of the chuppah will be 
+          covered with the <i>tallit</i>, which is the shawl that Dan was 
+          wrapped in as a newborn.
+        </dd>
+        <dt>Breaking of the Glass</dt>
+        <dd style="margin-bottom:8px">
+          This final ritual in the Jewish wedding ceremony has many meanings. 
+          One interpretation is that a glass, once broken, is irrevocably 
+          changed. Marriage is also a transforming experience for the bride and 
+          groom.
+        </dd>
+        <dt>Yichud (Seclusion)</dt>
+        <dd style="margin-bottom:8px">
+          Immediately following the ceremony, we will spend a few minutes alone 
+          in a private room, appreciating the significance of the ceremony and 
+          enjoying our first moments together as a married couple.
+        </dd>
+      </dl>
+    </div>
+  </div>
+</div>
+{% endblock %}

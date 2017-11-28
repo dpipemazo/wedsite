@@ -49,6 +49,10 @@ html {
   margin: 0 auto;
 }
 
+.half-height-image {
+  max-height: 100px;
+}
+
 .main-header-text {
   font-size: 10vw;
   margin-top: 24vh;

@@ -1,0 +1,114 @@
+{% extends "wedding/blocks/base.html" %}
+{% load static %}
+
+{% block title %}
+Wedding Party
+{% endblock %}
+
+{% block content %}
+<div id="story" class="container-fluid page-container base-font">
+  <h1 class="page-header text-center">#team</h1>
+
+  <!-- Groomsmen -->
+  <div class="row">
+    <div class="col-sm-6 text-justify">
+      <h2 class="text-center">Groomsmen</h2>
+      <div class="team-member">
+        <h3 class="text-center">
+          Ari Mazo<br>
+          <small class="text-muted">Best Man</small>
+        </h3>
+        <image src="{% static 'images/team/ari_mazo.jpg' %}"
+          class="img-responsive img-circle half-width-image float-center"
+          alt="Ari Mazo :D"/>
+      </div>
+
+      <div class="team-member">
+        <h3 class="text-center">Sean Keenan</h3>
+        <image src="{% static 'images/team/sean_keenan.jpg' %}"
+          class="img-responsive img-circle half-width-image float-center"
+          alt="Sean Keenan :D"/>
+      </div>
+
+      <div class="team-member">
+        <h3 class="text-center">Eli Alster</h3>
+        <image src="{% static 'images/team/eli_alster.png' %}"
+          class="img-responsive img-circle half-width-image float-center"
+          alt="Eli Alster :D"/>
+      </div>
+
+      <div class="team-member">
+        <h3 class="text-center">Ben Lieber</h3>
+        <image src="{% static 'images/team/ben_lieber.jpg' %}"
+          class="img-responsive img-circle half-width-image float-center"
+          alt="Ben Lieber :D"/>
+      </div>
+
+      <div class="team-member">
+        <h3 class="text-center">Alex Wilson</h3>
+        <image src="{% static 'images/team/alex_wilson.jpg' %}"
+          class="img-responsive img-circle half-width-image float-center"
+          alt="Alex Wilson :D"/>
+      </div>
+    </div> <!--end column-->
+
+  <!-- Bridesmaids -->
+    <div class="col-sm-6 text-justify">
+      <h2 class="text-center">Bridesmaids</h2>
+      <div class="team-member">
+        <h3 class="text-center">
+          Lilianna Cordero<br>
+          <small class="text-muted">Maid of Honor</small>
+        </h3>
+        <image src="{% static 'images/team/lilianna_cordero.jpg' %}"
+          class="img-responsive img-circle half-width-image float-center"
+          alt="Lilianna Cordero :3"/>
+      </div>
+      <div class="team-member">
+        <h3 class="text-center">Steven Okai</h3>
+        <image src="{% static 'images/team/steven_okai.jpg' %}"
+          class="img-responsive img-circle half-width-image float-center"
+          alt="Steven Okai :3"/>
+      </div>
+
+      <div class="team-member">
+        <h3 class="text-center">Ayelet Bitton</h3>
+        <image src="{% static 'images/team/ayelet_Bitton.jpg' %}"
+          class="img-responsive img-circle half-width-image float-center"
+          alt="Ayelet Bitton :3"/>
+      </div>
+
+      <div class="team-member">
+        <h3 class="text-center">Roy Hu</h3>
+        <image src="{% static 'images/team/roy_hu.jpg' %}"
+          class="img-responsive img-circle half-width-image float-center"
+          alt="Roy Hu :3"/>
+      </div>
+
+      <div class="team-member">
+        <h3 class="text-center">Delara Fadavi</h3>
+        <image src="{% static 'images/team/delara_fadavi.jpg' %}"
+          class="img-responsive img-circle half-width-image float-center"
+          alt="Delara Fadavi :3"/>
+      </div>
+    </div> <!--end column-->
+  </div> <!--end row-->
+  <div class="row">
+    <div class="col-sm-12 text-justify">
+      <h2 class="text-center">Credits</h2>
+      <p>Thank you to all of our family and friends who have helped make our 
+      wedding special! We would like to thank a few of our friends whose work
+      you all have seen.
+      </p>
+      <div style="display:flex; justify-content:center">
+        <dl class="dl-horizontal">
+          <dt>Stephany Lai</dt>
+          <dd>Artwork and Design</dd>
+          <dt>Esha Wang</dt>
+          <dd>Save the Date Photos</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
