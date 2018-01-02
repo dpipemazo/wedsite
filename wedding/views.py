@@ -81,6 +81,12 @@ class RSVPView(View):
             updated = True if (request.GET.get('updated', '') == 'y') else False
             new_account = True if (request.GET.get('new_account', '') == 'y') else False
             formset = RSVPPersonFormSet(instance=rsvp, prefix='people') if rsvp else []
+
+            # Need to make the formset read-only since we locked the RSVPs
+            for form in formset:
+                for field in form.fields:
+                    form.fields[field].disabled = True
+
             rsvp_form = RSVPForm(instance=rsvp, prefix='rsvp') if rsvp else None
             return render(request, 'wedding/pages/rsvp.html',
                 {
