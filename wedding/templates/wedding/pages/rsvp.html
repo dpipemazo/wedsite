@@ -10,9 +10,10 @@ RSVP
   <h1 class="page-header">RSVP</h1>
     <div class="row">
         <div class="col-sm-12 text-justify rsvp-text">
-            Please update and submit your information below as soon as possible and <b>no later than December 31, 2017</b>.
+            Thank you for submitting your response! The RSVP portion of the site is now closed. Your choices are shown below. We appreciate your understanding that all responses which were left as "unknown" will be treated as "no" as we need to submit final numbers to the venues. To make any changes, please contact Dan and Jennifer directly. <br><br>
 
-            All meals will be served family-style (as is Chinese tradition) with special arrangements made for those who note the requirement below. Please use the "special request" box to indicate anything dietary we should know about not covered by the checkboxes. There's also a comment box at the bottom that can be used for sending a personal message to the bride and groom. Thanks!
+<!-- RSVP disabled, this is no longer needed -->
+<!--             All meals will be served family-style (as is Chinese tradition) with special arrangements made for those who note the requirement below. Please use the "special request" box to indicate anything dietary we should know about not covered by the checkboxes. There's also a comment box at the bottom that can be used for sending a personal message to the bride and groom. Thanks! -->
         </div>
     </div>
 
@@ -58,10 +59,11 @@ RSVP
         <div class="base-font">
             <h2 class="text-center"> Attendees </h2>
 
-            <p>
+<!-- Form is disabled, this section is no longer needed -->
+<!--             <p>
                 Please mark below the attendance and dietary choices for all attendees.<br>
                 For information about the events please reference the <a href="{% url 'events' %}">Weekend Events Schedule</a>
-            </p>
+            </p> -->
 
         {% for form in formset %}
             {{ form.id }}
@@ -109,7 +111,8 @@ RSVP
 
         <div class="row base-font" align="center">
             <h2 class="text-center"> Comment </h2>
-            <p> Please use the section below to add a general comment to your response<br></p>
+<!-- Form disabled, no longer need this comment section. Need a space to make it look good though --> <br>
+<!--             <p> Please use the section below to add a general comment to your response<br></p> -->
 
             {{ rsvp_form.comment }}
         </div>
@@ -117,7 +120,8 @@ RSVP
         <hr>
 
         {% if formset %}
-            <input type="submit" class="login-button" value="Submit" />
+            <!-- Remove Submit button since we've locked the forms -->
+            <!-- <input type="submit" class="login-button" value="Submit" /> -->
         {% endif %}
     </form>
 </div>

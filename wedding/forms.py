@@ -179,6 +179,7 @@ class RSVPForm(forms.ModelForm):
         """
         super(RSVPForm, self).__init__(*args, **kwargs)
         self.fields['comment'].required = False
+        self.fields['comment'].disabled = True
 
 # Formset for all RSVP Persons
 RSVPPersonFormSet = inlineformset_factory(RSVP, RSVPPerson,
