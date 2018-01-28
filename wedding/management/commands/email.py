@@ -43,20 +43,19 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         '''send email via mailgun'''
 
-        # Want to use full URLS when rendering the template since we need to
-        #   fetch them from the site itself
-        set_script_prefix("https://jennanddan.love")
+        # Need a fake request to help us set up all the links in the email to work
+        #fake_request = FakeHttpRequest()
 
         subject = "It's coming!"
         from_email = "Jennifer and Dan's Wedding<wedding@mg.jennanddan.love>"
-        text_template = get_template("email/email.txt")
-        html_template = get_template("email/email.html")
 
         for user in User.objects.all():
 
             # Figure out if they're attending CNY/wedding
             attending_cny = self.get_attending_cny(user)
             attending_wedding = self.get_attending_wedding(user)
+            text_template = get_template("email/email.txt")
+            html_template = get_template("email/email.html")
 
             # Only send the message if they're attending the wedding
             if attending_wedding:
@@ -65,8 +64,13 @@ class Command(BaseCommand):
                     "first_name": user.first_name,
                     "last_name": user.last_name,
                     "attenting_cny": self.get_attending_cny(user),
-                    "attending_wedding": self.get_attending_wedding(user)
+                    "attending_wedding": self.get_attending_wedding(user),
+                    "request" : {
+                        "scheme": "https",
+                        "get_host": "jennanddan.love"
+                    }
                 }
+                
                 text_content = text_template.render(template_info)
                 html_content = html_template.render(template_info)
                 print (html_content)
