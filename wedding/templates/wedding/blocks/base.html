@@ -24,7 +24,7 @@
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Hammersmith+One|Montserrat:200,300" rel="stylesheet">
 <!-- Our own CSS -->
-<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{{ request.build_absolute_uri }}{% static 'css/style.css' %}" />
 
 <!-- Favicons -->
 <link rel="apple-touch-icon-precomposed"

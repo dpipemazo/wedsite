@@ -1,0 +1,68 @@
+{% extends "wedding/blocks/base.html" %}
+{% load static %}
+
+<style>
+	.tab { margin-left: 40px; }
+</style>
+
+{% block content %}
+<div id="contact" class="container-fluid base-font page-container">
+  <h1 class="page-header text-center">Jennifer and Dan, 2/18/18</h1>
+
+	Hi {{ first_name }},<br><br>
+
+	We can't wait to celebrate with you in just a few weeks!<br><br>
+
+	Please find below a confirmation of your response from the web site as well as additional information about the events:<br><br>
+
+	{% if attending_cny %}
+		We have the following people attending our Chinese New Year / Shabbat dinner on 2/16/18:<br>
+		<ol>
+		{% for person in attending_cny %}
+			<li class="tab">{{ person.name }}</li><br>
+		{% endfor %}
+		</ol>
+		<br>
+
+		We'll be gathering at 7:00PM at:<br><br>
+		<b>Empress Harbor Restaurant</b><br>
+		111 N Atlantic Blvd #350<br>Monterey Park, CA 91754<br>
+		<a href=https://www.google.com/maps/place/Empress+Harbor+Restaurant/@34.0629425,-118.136659,17z/data=!3m1!4b1!4m5!3m4!1s0x80c2c55d6a1b9aa3:0x504f163410e84e1a!8m2!3d34.0629381!4d-118.1344703>Google Maps</a><br><br>
+
+		Parking is free in the structure beneath the restaurant. After parking, you can take the escalators or stairs up to the third floor to find the restaurant.
+
+		After dinner (around 8:30PM) we will walk a few shops down to get boba at:<br><br>
+		<b>Half and Half Tea House</b><br>
+		141 N Atlantic Blvd #112<br>Monterey Park, CA 91754<br>
+		<a href="https://www.google.com/maps/place/Half+%26+Half+Tea+House+MP/@34.0636102,-118.1367197,17z/data=!3m1!4b1!4m5!3m4!1s0x80c2c55d72b7cc0d:0x2bf98171d1195ecd!8m2!3d34.0636058!4d-118.134531">Google Maps</a><br><br>
+
+		Please note that traffic in Los Angeles can be a bit challenging and that Monterey Park is a bit of a drive from the wedding venue and hotels. Best case from the Redondo/Hermosa beach area is 40 minutes, the more likely case is closer to an hour on a Friday evening. Please plan accordingly!<br><br>
+	{% endif %}
+
+	{% if attending_wedding %}
+		We have the following people attending our wedding on 2/18/18:<br>
+		<ol>
+		{% for person in attending_wedding %}
+			<li class="tab">{{ person.name }}</li></br>
+		{% endfor %}
+		</ol>
+		<br>
+
+		The ceremony and reception are both being held at at<br><br>
+		La Venta Inn<br>
+		804 Vía Del Monte<br>
+		Palos Verdes Estates, CA 90274<br>
+		<a href="https://www.google.com/maps?saddr=My+Location&daddr=804+Vía+Del+Monte,+Palos+Verdes+Estates,+CA+90274">Google Maps</a><br>
+
+		Please arrive <b>no later than 3:45PM</b> as the ceremony will begin promptly at 4:00PM. <br><br>
+
+		La Venta Inn is a 15-20 minute drive from the Redondo/Hermosa beach area and doesn't require any highways or highly-trafficked routes. Parking is free and available onsite. There should be enough parking for everyone, though carpooling is greatly appreciated. Ridesharing options (Lyft, Uber, etc.) are also readily available in the area. Please be sure your transportation plans include a designated driver!<br><br>
+	{% endif %}
+
+	Please feel free to reply directly to this email with any comments, questions or concerns about the wedding or events. This email was automatically generated, but the responses go to Jenn and Dan's inbox :). 
+
+	Best,
+	Jenn and Dan
+</div>
+
+{% endblock %}
