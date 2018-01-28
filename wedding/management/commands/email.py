@@ -65,10 +65,6 @@ class Command(BaseCommand):
                     "last_name": user.last_name,
                     "attending_cny": self.get_attending_cny(user),
                     "attending_wedding": self.get_attending_wedding(user),
-                    "request" : {
-                        "scheme": "https",
-                        "get_host": "jennanddan.love"
-                    }
                 }
 
                 text_content = text_template.render(template_info)
