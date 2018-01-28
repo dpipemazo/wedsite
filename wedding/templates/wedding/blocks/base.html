@@ -28,17 +28,17 @@
 
 <!-- Favicons -->
 <link rel="apple-touch-icon-precomposed"
-    sizes="57x57" href="{% static 'images/favicon-114.png' %}?v=2">
+    sizes="57x57" href="{{ request.build_absolute_uri }}{% static 'images/favicon-114.png' %}?v=2">
 <link rel="apple-touch-icon-precomposed"
-    sizes="114x114" href="{% static 'images/favicon-114.png' %}?v=2">
+    sizes="114x114" href="{{ request.build_absolute_uri }}{% static 'images/favicon-114.png' %}?v=2">
 <link rel="apple-touch-icon-precomposed"
-    sizes="72x72" href="{% static 'images/favicon-144.png' %}?v=2">
+    sizes="72x72" href="{{ request.build_absolute_uri }}{% static 'images/favicon-144.png' %}?v=2">
 <link rel="apple-touch-icon-precomposed"
-    sizes="144x144" href="{% static 'images/favicon-144.png' %}?v=2">
+    sizes="144x144" href="{{ request.build_absolute_uri }}{% static 'images/favicon-144.png' %}?v=2">
 <link rel="icon" type="image/vnd.microsoft.icon"
-    sizes="32x32 48x48" href="{% static 'images/favicon-32.ico' %}?v=2">
-<link rel="icon" sizes="128x128" href="{% static 'images/favicon-128.icns' %}?v=2">
-<link rel="icon" href="{% static 'images/favicon-144.png' %}?v=2" type="image/x-icon">
+    sizes="32x32 48x48" href="{{ request.build_absolute_uri }}{% static 'images/favicon-32.ico' %}?v=2">
+<link rel="icon" sizes="128x128" href="{{ request.build_absolute_uri }}{% static 'images/favicon-128.icns' %}?v=2">
+<link rel="icon" href="{{ request.build_absolute_uri }}{% static 'images/favicon-144.png' %}?v=2" type="image/x-icon">
 
 <style>
 {% block style %}
@@ -71,33 +71,33 @@
 
     <div id="myNavbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="{% url 'story' %}">Our Story</a></li>
+        <li><a href="{{ request.build_absolute_uri }}{% url 'story' %}">Our Story</a></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown"
             href="#">The Wedding<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="{% url 'wedding' %}">Ceremony & Reception</a></li>
-            <li><a href="{% url 'events' %}">Weekend Events</a></li>
-            <li><a href="{% url 'traditions' %}">Wedding Traditions</a></li>
-            <li><a href="{% url 'team' %}">Meet the Team</a></li>
+            <li><a href="{{ request.build_absolute_uri }}{% url 'wedding' %}">Ceremony & Reception</a></li>
+            <li><a href="{{ request.build_absolute_uri }}{% url 'events' %}">Weekend Events</a></li>
+            <li><a href="{{ request.build_absolute_uri }}{% url 'traditions' %}">Wedding Traditions</a></li>
+            <li><a href="{{ request.build_absolute_uri }}{% url 'team' %}">Meet the Team</a></li>
           </ul>
         </li> <!--end wedding weekend dropdown-->
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown"
             href="#">Travel<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="{% url 'travel' %}">Travel & Lodging</a></li>
-            <li><a href="{% url 'explore' %}">Explore LA!</a></li>
+            <li><a href="{{ request.build_absolute_uri }}{% url 'travel' %}">Travel & Lodging</a></li>
+            <li><a href="{{ request.build_absolute_uri }}{% url 'explore' %}">Explore LA!</a></li>
           </ul>
         </li> <!--end travel dropdown-->
-        <li><a href="{% url 'rsvp' %}">RSVP</a></li>
-        <li><a href="{% url 'gifts' %}">Gifts</a></li>
-        <li><a href="{% url 'contact' %}">Contact</a></li>
+        <li><a href="{{ request.build_absolute_uri }}{% url 'rsvp' %}">RSVP</a></li>
+        <li><a href="{{ request.build_absolute_uri }}{% url 'gifts' %}">Gifts</a></li>
+        <li><a href="{{ request.build_absolute_uri }}{% url 'contact' %}">Contact</a></li>
         <li>
             {% if user.is_authenticated %}
-                <a href="{% url 'logout' %}">Log Out</a>
+                <a href="{{ request.build_absolute_uri }}{% url 'logout' %}">Log Out</a>
             {% else %}
-                <a href="{% url 'login' %}?next={% url 'index' %}">Log In</a>
+                <a href="{{ request.build_absolute_uri }}{% url 'login' %}?next={{ request.build_absolute_uri }}{% url 'index' %}">Log In</a>
             {% endif %}
         </li>
       </ul>
