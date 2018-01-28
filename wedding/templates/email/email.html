@@ -1,13 +1,12 @@
-{% extends "wedding/blocks/base.html" %}
 {% load static %}
+{% load inlinecss %}
 
-{% block content %}
-<div id="contact" class="container-fluid base-font page-container">
-  	<h1 class="page-header text-center">Jenn & Dan 2·18·18</h1>
-  	<div class="row">
-		<h3> Dear {{ first_name }}, </h3>
-
+{% inlinecss "css/email.css" %}
+<div id="contact" class="base-font">
+  	<div class="base-font">
 		<p>
+			Dear {{ first_name }},<br><br>
+
 			We can't wait to celebrate with you in just a few weeks!<br><br>
 
 			Please find below a confirmation of your response from the web site as well as additional information about the events.
@@ -15,69 +14,59 @@
 	</div>
 
 	{% if attending_cny %}
-	<div class="row">
-		<h3> Chinese New Year & Shabbat Dinner </h3>
+	<div class="base-font">
+		<h2> Chinese New Year & Shabbat Dinner </h2>
 
-		<p>
-			We have the following people attending our Chinese New Year / Shabbat dinner on 2/16/18:<br>
-			<ol>
-			{% for person in attending_cny %}
-				<li class="tab">{{ person.name }}</li>
-			{% endfor %}
-			</ol>
+		<p>We have the following people attending our Chinese New Year / Shabbat dinner on 2/16/18:</p>
+		<ol>
+		{% for person in attending_cny %}
+			<li>{{ person.name }}</li>
+		{% endfor %}
+		</ol>
 
-			We'll be gathering at 7:00PM at:<br><br>
-			<b>Empress Harbor Restaurant</b><br>
-			111 N Atlantic Blvd #350<br>Monterey Park, CA 91754<br>
-			<a href=https://www.google.com/maps/place/Empress+Harbor+Restaurant/@34.0629425,-118.136659,17z/data=!3m1!4b1!4m5!3m4!1s0x80c2c55d6a1b9aa3:0x504f163410e84e1a!8m2!3d34.0629381!4d-118.1344703>Google Maps</a><br><br>
+		<p>We'll be gathering at 7:00PM at:<br><br>
+		<b>Empress Harbor Restaurant</b><br>
+		111 N Atlantic Blvd #350<br>Monterey Park, CA 91754<br>
+		<a href=https://www.google.com/maps/place/Empress+Harbor+Restaurant/@34.0629425,-118.136659,17z/data=!3m1!4b1!4m5!3m4!1s0x80c2c55d6a1b9aa3:0x504f163410e84e1a!8m2!3d34.0629381!4d-118.1344703>Google Maps</a></p>
 
-			Parking is free in the structure beneath the restaurant. After parking, you can take the escalators or stairs up to the third floor to find the restaurant.
+		<p>Parking is free in the structure beneath the restaurant. After parking, you can take the escalators or stairs up to the third floor to find the restaurant.</p>
 
-			After dinner (around 8:30PM) we will walk a few shops down to get boba at:<br><br>
-			<b>Half and Half Tea House</b><br>
-			141 N Atlantic Blvd #112<br>Monterey Park, CA 91754<br>
-			<a href="https://www.google.com/maps/place/Half+%26+Half+Tea+House+MP/@34.0636102,-118.1367197,17z/data=!3m1!4b1!4m5!3m4!1s0x80c2c55d72b7cc0d:0x2bf98171d1195ecd!8m2!3d34.0636058!4d-118.134531">Google Maps</a><br><br>
+		<p>After dinner (around 8:30PM) we will walk a few shops down to get boba at:<br><br>
+		<b>Half and Half Tea House</b><br>
+		141 N Atlantic Blvd #112<br>Monterey Park, CA 91754<br>
+		<a href="https://www.google.com/maps/place/Half+%26+Half+Tea+House+MP/@34.0636102,-118.1367197,17z/data=!3m1!4b1!4m5!3m4!1s0x80c2c55d72b7cc0d:0x2bf98171d1195ecd!8m2!3d34.0636058!4d-118.134531">Google Maps</a></p>
 
-			Please note that traffic in Los Angeles can be a bit challenging and that Monterey Park is a bit of a drive from the wedding venue and hotels. Best case from the Redondo/Hermosa beach area is 40 minutes, the more likely case is closer to an hour on a Friday evening. Please plan accordingly!
-		</p>
+		<p>Please note that traffic in Los Angeles can be a bit challenging and that Monterey Park is a bit of a drive from the wedding venue and hotels. Best case from the Redondo/Hermosa beach area is 40 minutes, the more likely case is closer to an hour on a Friday evening. Please plan accordingly!</p>
 	</div>
 	{% endif %}
 
 	{% if attending_wedding %}
-	<div class="row">
-		<h3> Wedding Ceremony and Reception </h3>
+	<div class="base-font">
+		<h2> Wedding Ceremony and Reception </h2>
 
-		<p>
+		<p>We have the following people attending our wedding on 2/18/18:</p>
+		<ol>
+		{% for person in attending_wedding %}
+			<li>{{ person.name }}</li>
+		{% endfor %}
+		</ol>
 
-			We have the following people attending our wedding on 2/18/18:<br>
-			<ol>
-			{% for person in attending_wedding %}
-				<li class="tab">{{ person.name }}</li>
-			{% endfor %}
-			</ol>
+		<p>The ceremony and reception are both being held at at:<br><br>
+		<b>La Venta Inn</b><br>
+		804 Vía Del Monte<br>
+		Palos Verdes Estates, CA 90274<br>
+		<a href="https://www.google.com/maps?saddr=My+Location&daddr=804+Vía+Del+Monte,+Palos+Verdes+Estates,+CA+90274">Google Maps</a></p>
 
-			The ceremony and reception are both being held at at:<br><br>
-			<b>La Venta Inn</b><br>
-			804 Vía Del Monte<br>
-			Palos Verdes Estates, CA 90274<br>
-			<a href="https://www.google.com/maps?saddr=My+Location&daddr=804+Vía+Del+Monte,+Palos+Verdes+Estates,+CA+90274">Google Maps</a><br>
+		<p>Please arrive <b>no later than 3:45PM</b> as the ceremony will begin promptly at 4:00PM.</p>
 
-			Please arrive <b>no later than 3:45PM</b> as the ceremony will begin promptly at 4:00PM. <br><br>
-
-			La Venta Inn is a 15-20 minute drive from the Redondo/Hermosa beach area and doesn't require any highways or highly-trafficked routes. Parking is free and available onsite. There should be enough parking for everyone, though carpooling is greatly appreciated. Ridesharing options (Lyft, Uber, etc.) are also readily available in the area. Please be sure your transportation plans include a designated driver!
-		</p>
+		<p>La Venta Inn is a 15-20 minute drive from the Redondo/Hermosa beach area and doesn't require any highways or highly-trafficked routes. Parking is free and available onsite. There should be enough parking for everyone, though carpooling is greatly appreciated. Ridesharing options (Lyft, Uber, etc.) are also readily available in the area. Please be sure your transportation plans include a designated driver! </p>
 	</div>
 	{% endif %}
 
-	<div class="row">
-		<h3> General Information </h3>
-		<p>
-			Please feel free to reply directly to this email with any comments, questions or concerns about the wedding or events. This email was automatically generated, but the responses go to Jenn and Dan's inbox :).<br><br>
-
-			Best,<br>
-			Jenn and Dan
-		</p>
+	<div class="base-font">
+		<h2> General Information </h2>
+		<p> Please feel free to reply directly to this email with any comments, questions or concerns about the wedding or events. If the information for your reservation is incorrect please let us know as soon as possible. This email was automatically generated, but the responses go directly to our inbox :).</p>
+		<p>Best,<br>Jenn and Dan</p>
 	</div>
 </div>
-
-{% endblock %}
+{% endinlinecss %}

@@ -63,17 +63,16 @@ class Command(BaseCommand):
                 template_info = {
                     "first_name": user.first_name,
                     "last_name": user.last_name,
-                    "attenting_cny": self.get_attending_cny(user),
+                    "attending_cny": self.get_attending_cny(user),
                     "attending_wedding": self.get_attending_wedding(user),
                     "request" : {
                         "scheme": "https",
                         "get_host": "jennanddan.love"
                     }
                 }
-                
+
                 text_content = text_template.render(template_info)
                 html_content = html_template.render(template_info)
-                print (html_content)
                 msg = EmailMultiAlternatives(subject, text_content, from_email, [user.email])
                 msg.attach_alternative(html_content, "text/html")
-                # msg.send(
+                msg.send()

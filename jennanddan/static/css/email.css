@@ -1,0 +1,47 @@
+p {
+  font-family: 'Arial';
+}
+
+h1 {
+  font-family: 'Arial';
+}
+
+h2 {
+  font-family: 'Arial';
+}
+
+h3 {
+  font-family: 'Arial';
+}
+
+ol {
+  font-family: 'Arial';
+}
+
+li {
+  font-family: 'Arial';
+}
+
+b {
+  font-family: 'Arial';
+}
+
+a {
+  font-family: 'Arial';
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+.page-header {
+  font-size:60px;
+  base-font;
+  margin-top:30px;
+  margin-bottom:20px;
+}
+
+.page-container {
+  padding-top:50px;
+  max-width: 970px;
+}

@@ -12,11 +12,6 @@ html {
   height: 100%;
 }
 
-
-.content {
-  flex: 1 0 auto;
-}
-
 .base-font {
   font-family: 'Montserrat', cursive;
   font-weight: 200;
