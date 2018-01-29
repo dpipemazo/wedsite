@@ -15,7 +15,8 @@ class Command(BaseCommand):
         """
         try:
             rsvp = user.profile.rsvp
-        except RSVP.DoesNotExist:
+        except:
+            print ("Error getting RSVP for {} {}".format(user.first_name, user.last_name))
             return []
 
         return rsvp.rsvp_person.all()
@@ -69,7 +70,7 @@ class Command(BaseCommand):
 
                 text_content = text_template.render(template_info)
                 html_content = html_template.render(template_info)
-                print (html_content)
+                print ("{} {}".format(user.first_name, user.last_name))
                 msg = EmailMultiAlternatives(subject, text_content, from_email, [user.email])
                 msg.attach_alternative(html_content, "text/html")
                 msg.send()
