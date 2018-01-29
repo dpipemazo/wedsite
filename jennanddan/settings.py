@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'easy_maps',
     'raven.contrib.django.raven_compat',
     'tz_detect',
+    'django_inlinecss',
 ]
 
 MIDDLEWARE = [

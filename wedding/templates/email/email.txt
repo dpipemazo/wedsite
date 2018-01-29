@@ -1,0 +1,54 @@
+{% load static %}
+
+Dear {{ first_name }},
+
+We can't wait to celebrate with you in just a few weeks!
+
+Please find below a confirmation of your response from the web site as well as additional information about the events.
+
+{% if attending_cny %}
+~Chinese New Year & Shabbat Dinner~
+
+We have the following people attending our Chinese New Year / Shabbat dinner on 2/16/18:
+{% for person in attending_cny %}
+    - {{ person.name }}
+{% endfor %}
+
+We'll be gathering at 7:00PM at:
+Empress Harbor Restaurant
+111 N Atlantic Blvd #350
+Monterey Park, CA 91754
+
+Parking is free in the structure beneath the restaurant. After parking, you can take the escalators or stairs up to the third floor to find the restaurant.
+
+After dinner (around 8:30PM) we will walk a few shops down to get boba at:
+Half and Half Tea House
+141 N Atlantic Blvd #112
+Monterey Park, CA 91754
+
+Please note that traffic in Los Angeles can be a bit challenging and that Monterey Park is a bit of a drive from the wedding venue and hotels. Best case from the Redondo/Hermosa beach area is 40 minutes, the more likely case is closer to an hour on a Friday evening. Please plan accordingly!
+{% endif %}
+
+{% if attending_wedding %}
+~Wedding Ceremony and Reception~
+
+We have the following people attending our wedding on 2/18/18:
+{% for person in attending_wedding %}
+    - {{ person.name }}
+{% endfor %}
+
+The ceremony and reception are both being held at at:
+La Venta Inn
+804 Vía Del Monte
+Palos Verdes Estates, CA 90274
+
+Please arrive no later than 3:45PM as the ceremony will begin promptly at 4:00PM.
+
+La Venta Inn is a 15-20 minute drive from the Redondo/Hermosa beach area and doesn't require any highways or highly-trafficked routes. Parking is free and available onsite. There should be enough parking for everyone, though carpooling is greatly appreciated. Ridesharing options (Lyft, Uber, etc.) are also readily available in the area. Please be sure your transportation plans include a designated driver!
+{% endif %}
+
+~General Information~
+Please feel free to reply directly to this email with any comments, questions or concerns about the wedding or events. If the information for your reservation is incorrect please let us know as soon as possible. This email was automatically generated, but the responses go directly to our inbox :).
+
+Best,
+Jenn and Dan
