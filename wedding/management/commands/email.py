@@ -46,7 +46,7 @@ class Command(BaseCommand):
         # Need a fake request to help us set up all the links in the email to work
         #fake_request = FakeHttpRequest()
 
-        subject = "It's coming!"
+        subject = "Jennifer and Dan's Wedding: Update"
         from_email = "Jennifer and Dan's Wedding<wedding@mg.jennanddan.love>"
 
         for user in User.objects.all():
@@ -69,6 +69,7 @@ class Command(BaseCommand):
 
                 text_content = text_template.render(template_info)
                 html_content = html_template.render(template_info)
+                print (html_content)
                 msg = EmailMultiAlternatives(subject, text_content, from_email, [user.email])
                 msg.attach_alternative(html_content, "text/html")
                 msg.send()
