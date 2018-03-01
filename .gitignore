@@ -4,5 +4,6 @@ ENV
 staticfiles
 db.sqlite3
 .DS_Store
+*~
 
 /Pipfile
