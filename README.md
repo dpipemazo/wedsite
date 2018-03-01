@@ -113,6 +113,69 @@ deploying. Once the branch is merged into master, it will be auto-deployed
 to the main app. Development should be done on feature branches forked off of
 master and then merged back in through PRs.
 
+## Forking
+
+This is a step-by-step guide for forking this codebase and hosting it on your
+own Heroku account. These instructions assume you have already cloned the
+codebase and installed dependencies into a local venv as described above, but
+have not configured your .env file or the remote git repository for hosting the
+new project.
+
+Note that the following assumes you will end up hosting
+
+### Configure app-specific details
+
+Generate a new Django secret key for your app with in a shell inside your venv:
+```
+$ echo "DJANGO_SECRET_KEY='$(python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())')'" >> .env
+```
+
+Rename the jennanddan directory and related references to your own cute name:
+```
+$ export WEDDING=mycuteweddingname
+$ git mv jennanddan $WEDDING
+$ sed -i "s/jennanddan/$WEDDING/g" manage.py Procfile $WEDDING/wsgi.py $WEDDING/urls.py
+$ sed -i "s/jennanddan.wsgi/$WEDDING.wsgi/g" $WEDDING/settings.py
+$ sed -i "s/jennanddan.urls/$WEDDING.urls/g" $WEDDING/settings.py
+```
+
+### External API Dependencies
+
+A Google Maps API key is required and should be referenced both in `.env` and
+as a config var in your Heroku app's settings page as `GOOGLE_MAPS_API_KEY`.
+
+<!-- TODO link instructions on getting a google maps api key -->
+
+### Create and Configure a new Python Heroku App
+
+From your Heroku account dashboard, create a new app. Then, on the app page for
+this new app, enable the add-on for Heroku Postgres.
+
+Once you have this new app set up, run the following from your git repository to
+test that everything runs as expected locally:
+```
+$ heroku local web
+```
+
+If that works as expected, you can then deploy it to your newly configured
+Heroku app! Note that the following suggests that you commit only the files that
+the tutorial required you to edit, but you should of course add anything else
+you have already modified as well.
+```
+$ git add manage.py Procfile $WEDDING/wsgi.py $WEDDING/urls.py $WEDDING/settings.py
+$ git commit
+$ heroku git:remote -a MY_HEROKU_APP_NAME
+$ git push heroku master
+```
+
+### Domain, URLs, Static Content
+
+Now that your app functions in its own Heroku environment attached to this
+git repository, you're ready to change the content!
+
+<!-- TODO details on content location and what should change in your own Heroku
+app vs. what is worth a pull request upstream. -->
+
 ## Feedback
 
 If you have a github account, please leave feedback through github issues. If
