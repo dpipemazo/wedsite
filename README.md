@@ -1,17 +1,17 @@
-# wedding_site
-
-Dan and Jennifer's Wedding Site!
+# Riley and Vivian's Wedding Site!
 
 ## Overview
 
 This is a super-simple wedding web site built atop django, heroku and bootstrap.
-The goal is to eventually open-source this so that others can have a simple
-wedding site framework in Python.
+Forked from @dpipemazo's amazing site.
 
+<!--
+TODO: host the site somewhere and link appropiately; these links are to Dan's site
 The site can always be seen
 [here](https://limitless-bastion-36877.herokuapp.com/)
 and will eventually be deployed to the public domain
 [https://jennanddan.love](https://jennanddan.love/).
+-->
 
 ## Development
 
@@ -54,7 +54,7 @@ Note: We're using python 3.6 in heroku, so it's important that we test with
 python 3.6 locally as well.
 
 ```
-git clone https://github.com/dankuna/wedding_site.git
+git clone https://github.com/dpipemazo/rylz_wedding_site.git
 cd wedding_site
 virtualenv -p python3 ENV
 source ENV/bin/activate
@@ -116,6 +116,6 @@ master and then merged back in through PRs.
 ## Feedback
 
 If you have a github account, please leave feedback through github issues. If
-not, feel free to email dan directly or poke him through any other social
-media.
+not, feel free to email Riley or Dan directly or poke them through any other
+social media.
 
