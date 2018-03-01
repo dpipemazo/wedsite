@@ -1,1 +1,1 @@
-web: gunicorn jennanddan.wsgi --log-file -
+web: gunicorn vivsaidyes.wsgi --log-file -
