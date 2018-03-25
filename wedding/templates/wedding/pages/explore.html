@@ -8,11 +8,11 @@ Explore LA!
 
 {% block content %}
 <div id="travel" class="container-fluid base-font page-container">
-  <h1 class="page-header text-center">Explore LA!</h1>
+  <h1 class="page-header text-center">{{ explore.title }}</h1>
 
   <!-- Row with wedding map and venue info -->
   <div class="row">
-    {% for place in explore %}
+    {% for place in explore.areas %}
       <div class="col-sm-4 text-justify">
         <h2 class="text-center"> {{ place.name }} </h2>
 

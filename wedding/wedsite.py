@@ -179,6 +179,8 @@ WEDDING_RECEPTION = {
 #	giving guests ideas about how to spend their time for parts of the
 #	weekend you haven't directly scheduled.
 #
+EXPLORE_TITLE = "Explore LA!"
+
 EXPLORE_AREA_1 = {
 	"name" : "The South Bay",
 	"map_address" : "South Bay, Los Angeles County, CA",
@@ -210,9 +212,13 @@ WEDSITE_JSON = {
 	"rehearsal" : REHEARSAL_DINNER,
 	"ceremony" : WEDDING_CEREMONY,
 	"reception" : WEDDING_RECEPTION,
-	"explore" : (
-		EXPLORE_AREA_1,
-		EXPLORE_AREA_2,
-		EXPLORE_AREA_3
-	),
+	"explore" : {
+		"title" : EXPLORE_TITLE,
+		"areas" : (
+			EXPLORE_AREA_1,
+			EXPLORE_AREA_2,
+			EXPLORE_AREA_3
+		),
+	},
+
 }
