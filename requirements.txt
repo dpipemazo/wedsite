@@ -8,3 +8,4 @@ django-easy-maps==0.9.3
 raven>=3
 django-tz-detect==0.2.8
 django-inlinecss==0.1.2
+lorem
