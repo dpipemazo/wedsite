@@ -1,17 +1,9 @@
-# Riley and Vivian's Wedding Site!
+# Wedsite
 
 ## Overview
 
 This is a super-simple wedding web site built atop django, heroku and bootstrap.
-Forked from @dpipemazo's amazing site.
-
-<!--
-TODO: host the site somewhere and link appropiately; these links are to Dan's site
-The site can always be seen
-[here](https://limitless-bastion-36877.herokuapp.com/)
-and will eventually be deployed to the public domain
-[https://jennanddan.love](https://jennanddan.love/).
--->
+Click [here](http://wedsite.io) to see an example wedsite!
 
 ## Development
 
@@ -181,4 +173,3 @@ app vs. what is worth a pull request upstream. -->
 If you have a github account, please leave feedback through github issues. If
 not, feel free to email Riley or Dan directly or poke them through any other
 social media.
-
