@@ -5,6 +5,7 @@ from django.core.mail import EmailMultiAlternatives
 from django.template.loader import get_template
 from django.urls import set_script_prefix
 from django.conf import settings
+from wedding.wedsite import (GRIDE, BROOM)
 
 class Command(BaseCommand):
     help = 'Sends a summary email to all users'
@@ -47,8 +48,8 @@ class Command(BaseCommand):
         # Need a fake request to help us set up all the links in the email to work
         #fake_request = FakeHttpRequest()
 
-        subject = "Jennifer and Dan's Wedding: Update"
-        from_email = "Jennifer and Dan's Wedding<wedding@mg.wedsite.io>"
+        subject = "{} and {}'s Wedding: Update".format(GRIDE['first_name'], BROOM['first_name'])
+        from_email = "{} and {}'s Wedding<wedding@mg.wedsite.io>".format(GRIDE['first_name', BROOM['first_name']])
 
         for user in User.objects.all():
 
