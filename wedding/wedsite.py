@@ -353,6 +353,36 @@ TRADITIONS_ITEMS = (
 )
 
 #
+# Travel Page. All of the info your guests may need for travel and
+#	lodging
+#
+AIRPORT_INFO = lorem.paragraph()
+
+HOTEL_ITEMS = (
+	{
+		"name" : "Hotel 1",
+		"city" : "Romanticville",
+		"yelp" : "https://www.yelp.com/",
+		"phone" : "(626)-395-1712",
+		"mention" : "Group Discount Name",
+		"discount" : "100%",
+		"description" : lorem.paragraph(),
+	},
+
+	{
+		"name" : "Hotel 2",
+		"city" : "Romanticville",
+		"yelp" : "https://www.yelp.com/",
+		"phone" : "(626)-395-1712",
+		"mention" : "Group Discount Name",
+		"discount" : "100%",
+		"description" : lorem.paragraph(),
+	},
+)
+
+AIRBNB_LINK = "https://airbnb.com/"
+
+#
 # Top-level Object that's fed into the templates
 #
 
@@ -389,4 +419,9 @@ WEDSITE_JSON = {
 	"story" : STORY_ITEMS,
 	"credits" : CREDITS_ITEMS,
 	"traditions" : TRADITIONS_ITEMS,
+	"travel" : {
+		"airport_info" : AIRPORT_INFO,
+		"hotels" : HOTEL_ITEMS,
+		"airbnb" : AIRBNB_LINK,
+	},
 }

@@ -180,3 +180,7 @@ html {
   width: 80%;
   height: 100px;
 }
+
+.hotel-td {
+    padding: 5px 0px 0px 20px;
+}
