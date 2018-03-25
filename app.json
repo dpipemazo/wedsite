@@ -1,0 +1,28 @@
+{
+  "name": "wedsite",
+  "description": "The easy-to-use open-source wedding website",
+  "scripts": {
+  },
+  "env": {
+    "DJANGO_SECRET_KEY" : {
+      "required": true
+    },
+    "GOOGLE_MAPS_API_KEY" : {
+      "required": true
+    },
+    "DEBUG" : "True"
+  },
+  "formation": {
+  },
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "scripts" : {
+      "postdeploy": "python manage.py migrate"
+  }
+}
