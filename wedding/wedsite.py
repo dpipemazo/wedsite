@@ -150,7 +150,7 @@ WEDDING_CEREMONY = {
 	"location" : {
 		"name" : "Some Venue",
 		"address" : "1234 Love Lane",
-		"city" : "Romantic",
+		"city" : "Romanticville",
 		"state" : "CA",
 		"zip" : "00000",
 		"maps_link" : "https://www.google.com/maps/place/Lloyd+House/@33.9745866,-118.3231545,11z/data=!4m8!1m2!2m1!1slloyd+house!3m4!1s0x80c2c4a868b87301:0x5857f9f8e8bb154b!8m2!3d34.1371511!4d-118.1228224"
@@ -233,6 +233,26 @@ GIFT_OPTION_3 = {
 LANDING_IMAGE = "images/landing_image_date.jpg"
 
 #
+# RSVP Page Info
+#
+
+# RSVP Cutoff Date
+RSVP_CUTOFF_DATE = datetime.datetime(2018, 2, 18)
+
+# Whether or not the RSVP portion of the site is active. If this is False
+#	then it will show users their RSVP but will not allow them to edit it,
+#	else when true they can edit it. This could eventually be modified
+#	to be automatically calculated from the cutoff but timezones get 
+#	tricky so for now we need to manually change it over
+RSVP_ACTIVE = True
+
+# Meal Description. Use this to go over your menu options or explain
+#	about the family-style menu, buffet, etc.
+MEAL_DESCRIPTION = "All meals will be served family-style"
+
+
+
+#
 # Object that's fed into the templates
 #
 
@@ -250,13 +270,18 @@ WEDSITE_JSON = {
 		"areas" : (
 			EXPLORE_AREA_1,
 			EXPLORE_AREA_2,
-			EXPLORE_AREA_3
+			EXPLORE_AREA_3,
 		),
 	},
 	"gifts" : (
 		GIFT_OPTION_1,
 		GIFT_OPTION_2,
-		GIFT_OPTION_3
+		GIFT_OPTION_3,
 	),
-	"landing_image" : LANDING_IMAGE
+	"landing_image" : LANDING_IMAGE,
+	"rsvp" : {
+		"cutoff" : RSVP_CUTOFF_DATE,
+		"active" : RSVP_ACTIVE,
+		"meal_description" : MEAL_DESCRIPTION,
+	}
 }
