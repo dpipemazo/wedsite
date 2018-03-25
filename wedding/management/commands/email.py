@@ -21,7 +21,7 @@ class Command(BaseCommand):
 
         return rsvp.rsvp_person.all()
 
-    def get_attending_cny(self, user):
+    def get_attending_rehearsal(self, user):
         result = []
 
         people = self.get_rsvp_persons(user)
@@ -52,8 +52,8 @@ class Command(BaseCommand):
 
         for user in User.objects.all():
 
-            # Figure out if they're attending CNY/wedding
-            attending_cny = self.get_attending_cny(user)
+            # Figure out if they're attending rehearsal/wedding
+            attending_rehearsal = self.get_attending_rehearsal(user)
             attending_wedding = self.get_attending_wedding(user)
             text_template = get_template("email/email.txt")
             html_template = get_template("email/email.html")
@@ -64,7 +64,7 @@ class Command(BaseCommand):
                 template_info = {
                     "first_name": user.first_name,
                     "last_name": user.last_name,
-                    "attending_cny": self.get_attending_cny(user),
+                    "attending_rehearsal": self.get_attending_rehearsal(user),
                     "attending_wedding": self.get_attending_wedding(user),
                 }
 
