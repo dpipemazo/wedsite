@@ -2,90 +2,27 @@
 {% load static %}
 
 {% block title %}
-Wedding Story
+Our Story
 {% endblock %}
 
 {% block content %}
 <div id="story" class="container-fluid page-container base-font">
   <h1 class="page-header text-center">Our Story</h1>
-  <div class="row">
+  {% for item in story %}
+    {% if forloop.counter0 == 0 %}
+      <div class="row">
+    {% elif forloop.counter0|divisibleby:"3" %}
+      </div><div class="row">
+    {% endif %}
+
     <div class="col-sm-4 text-justify">
-      <h2 class="text-center">Love at First Bite</h2>
-      <p>
-        Thanksgiving, 2014. Dan, having just moved to San Diego a few months
-        prior, attended "tygiving," an annual potluck hosted by 
-        <a href="/team">Steven Okai</a> that brings together a large group of 
-        (mostly Caltech) friends for the holidays. Jennifer was attempting to 
-        fix a gravy that another friend had started but long since abandoned. 
-        Jennifer, introductions be damned, stopped the first person who passed 
-        the kitchen (Dan) and asked, "What does this gravy need?!" Dan came to 
-        the rescue, and Jennifer was impressed with the fix.
-      </p>
+      <h2 class="text-center">{{ item.title }}</h2>
+      <p>{{ item.description }}</p>
     </div>
-    <div class="col-sm-4 text-justify">
-      <h2 class="text-center">Valentine's Day</h2>
-      <p>
-        Jennifer, in an effort to help their friend Steven, hatched a scheme to 
-        get Steven a date for Valentine's Day. After surprising Steven with a 
-        date from UCSD's annual date auction fundraiser, Jennifer organized a 
-        group date (with help from her bridesmaid 
-        <a href="/team">Delara Fadavi</a>) to calm Steven's nerves and relax the 
-        mood. Out of Steven's three San Diego-based friends, Dan was the 
-        "goldilocks" conversationalist, so he came along as Jennifer's date. 
-        Dan spent the night telling stories of his and Steven's recent 
-        blizzard-filled snowboarding adventures, occasionally also delving into 
-        some delightful conversation with Jennifer.
-      </p>
-    </div>
-    <div class="col-sm-4 text-justify">
-      <h2 class="text-center">
-        Parking Lot Date<br>
-      </h2>
-      <p>
-        During the Valentine's Day dinner discussions and thereafter, through 
-        countless hours of calls and texts, Dan and Jennifer realized they had 
-        a lot in common! One of these common interests is the TV show
-        "Avatar: The Last Airbender." A few weeks after the Valentine's Day
-        dinner, there was an art exhibition dedicated to the show and its fans
-        at an art gallery in Alhambra. Dan invited Jennifer to attend its 
-        opening night for their first real date. The gallery opening proved to 
-        be a popular event, and Dan and Jennifer got to know each other more 
-        while standing in line for <b>four hours</b> in the parking lot. The 
-        night ended spectacularly with their first kiss!
-      </p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-6 text-justify">
-      <h2 class="text-center">Dating via Southwest</h2>
-      <p>
-        The long-distance relationship between Jennifer at UCLA and Dan in San
-        Diego seemed reasonable, so the two agreed to give it a shot. Then, Dan
-        promptly upended their budding relationship by quitting his job in San 
-        Diego to move into groomsman <a href="/team">Sean Keenan</a>'s kitchen 
-        in Cupertino and join an early-stage startup. Jennifer was supportive 
-        of Dan's career, and spent a majority of her time those first few months 
-        on an air mattress in said kitchen while studying for her first board 
-        exam. Over the next few years, Dan and Jennifer ping-ponged back and
-        forth between LA and SF on weekends. Many a brunch was consumed in the
-        dating process.
-      </p>
-    </div>
-    <div class="col-sm-6 text-justify">
-      <h2 class="text-center">...and back to the Parking Lot</h2>
-      <p>
-        After toiling through the holidays to prepare his CES 2017 demo, Dan
-        managed to take a few days off with Jennifer in LA before heading to the 
-        conference. Jennifer planned a Pixar-themed date at the California 
-        Science Center's interactive Pixar exhibit, followed by a visit to a 
-        Pixar art show at the same art gallery where they first got to know 
-        each other. It was pouring rain when they arrived at the gallery, but 
-        Dan had other plans. He led Jennifer deep into the parking lot, to the 
-        very spot where they had talked for so many hours on their first date. 
-        Down on one knee, with Jennifer holding the umbrella, Dan proposed and 
-        Jennifer said yes!
-      </p>
-    </div>
-  </div>
+
+    {% if forloop.last %}
+      </div>
+    {% endif %}
+  {% endfor %}
 </div>
 {% endblock %}

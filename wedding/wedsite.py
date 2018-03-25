@@ -205,27 +205,33 @@ EXPLORE_AREA_3 = {
 #	and you can have as many or few of them as you'd like of any type
 #	in any order.
 #
-GIFT_OPTION_1 = {
-	"name" : "Cultural Tradition",
-	"description" : lorem.paragraph(),
-}
+GIFT_OPTIONS = (
 
-GIFT_OPTION_2 = {
-	"name" : "Registry",
-	"description" : lorem.paragraph(),
-	"image" : {
-		"hyperlink" : "https://wedsite.io",
-		"static_img" : "images/amazon_smile.png"
-	}
-}
+	# Basic Gift option. Text only
+	{
+		"name" : "Cultural Tradition",
+		"description" : lorem.paragraph(),
+	},
 
-GIFT_OPTION_3 = {
-	"name" : "Donations",
-	"description" : lorem.paragraph(),
-	"video" : {
-		"hyperlink" : "https://www.youtube.com/embed/1AnfQcqMRlw"
-	}
-}
+	# Gift option with a hyperlinked image
+	{
+		"name" : "Registry",
+		"description" : lorem.paragraph(),
+		"image" : {
+			"hyperlink" : "https://wedsite.io",
+			"static_img" : "images/amazon_smile.png"
+		},
+	},
+
+	# Gift option with a video
+	{
+		"name" : "Donations",
+		"description" : lorem.paragraph(),
+		"video" : {
+			"hyperlink" : "https://www.youtube.com/embed/1AnfQcqMRlw"
+		},
+	},
+)
 
 #
 # Main Page Info
@@ -250,10 +256,35 @@ RSVP_ACTIVE = True
 #	about the family-style menu, buffet, etc.
 MEAL_DESCRIPTION = "All meals will be served family-style"
 
-
+#
+# Story Page Info. Recommended to keep this to multiples of 3
+#	to look best. Try to also keep all paragraphs the same length
+#
+STORY_ITEMS = (
+	{
+		"title" : "Story Item 1",
+		"description": lorem.paragraph(),
+	},
+	{
+		"title" : "Story Item 2",
+		"description": lorem.paragraph(),
+	},
+	{
+		"title" : "Story Item 3",
+		"description": lorem.paragraph(),
+	},
+	{
+		"title" : "Story Item 4",
+		"description": lorem.paragraph(),
+	},
+	{
+		"title" : "Story Item 5",
+		"description": lorem.paragraph(),
+	},
+)
 
 #
-# Object that's fed into the templates
+# Top-level Object that's fed into the templates
 #
 
 WEDSITE_JSON = {
@@ -273,15 +304,12 @@ WEDSITE_JSON = {
 			EXPLORE_AREA_3,
 		),
 	},
-	"gifts" : (
-		GIFT_OPTION_1,
-		GIFT_OPTION_2,
-		GIFT_OPTION_3,
-	),
+	"gifts" : GIFT_OPTIONS,
 	"landing_image" : LANDING_IMAGE,
 	"rsvp" : {
 		"cutoff" : RSVP_CUTOFF_DATE,
 		"active" : RSVP_ACTIVE,
 		"meal_description" : MEAL_DESCRIPTION,
-	}
+	},
+	"story" : STORY_ITEMS,
 }
