@@ -16,7 +16,7 @@
     };
     weddingInfoWindow = new google.maps.InfoWindow;
     weddingInfoWindow.setPosition(weddingPos);
-    weddingInfoWindow.setContent('Jennifer and Dan\'s Wedding :)');
+    weddingInfoWindow.setContent('{{gride.first_name}} and {{broom.first_name}}\'s Wedding :)');
     weddingInfoWindow.open(map);
 
     if (navigator.geolocation) {
