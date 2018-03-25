@@ -48,7 +48,7 @@ class Command(BaseCommand):
         #fake_request = FakeHttpRequest()
 
         subject = "Jennifer and Dan's Wedding: Update"
-        from_email = "Jennifer and Dan's Wedding<wedding@mg.jennanddan.love>"
+        from_email = "Jennifer and Dan's Wedding<wedding@mg.wedsite.io>"
 
         for user in User.objects.all():
 
