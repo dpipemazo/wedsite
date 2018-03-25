@@ -122,21 +122,14 @@ Generate a new Django secret key for your app with in a shell inside your venv:
 $ echo "DJANGO_SECRET_KEY='$(python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())')'" >> .env
 ```
 
-Rename the jennanddan directory and related references to your own cute name:
-```
-$ export WEDDING=mycuteweddingname
-$ git mv jennanddan $WEDDING
-$ sed -i "s/wedsite/$WEDDING/g" manage.py Procfile $WEDDING/wsgi.py $WEDDING/urls.py
-$ sed -i "s/wedsite.wsgi/$WEDDING.wsgi/g" $WEDDING/settings.py
-$ sed -i "s/wedsite.urls/$WEDDING.urls/g" $WEDDING/settings.py
-```
-
 ### External API Dependencies
 
 A Google Maps API key is required and should be referenced both in `.env` and
 as a config var in your Heroku app's settings page as `GOOGLE_MAPS_API_KEY`.
 
-<!-- TODO link instructions on getting a google maps api key -->
+Follow the instrustions [here](https://developers.google.com/maps/documentation/javascript/get-api-key)
+to set up a javascript API key for the app.
+
 
 ### Create and Configure a new Python Heroku App
 
