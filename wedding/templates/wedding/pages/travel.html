@@ -12,67 +12,50 @@ Travel
   <!-- Row with wedding map and venue info -->
   <div class="row">
     <div class="col-sm-4 base-font text-justify">
-      <h2 class="text-center"> Air Travel </h2>
-      <p>
-      There are two airports which will work well for traveling to the
-      wedding: Los Angeles International Airport (LAX) and Long Beach Airport
-      (LGB). Both are roughly equidistant to the ceremony location and lodging,
-      30-45 minutes. LAX is served more regularly by all major airlines, while
-      LGB is primarily served by JetBlue. LGB is a smaller and more manageable
-      airport, but it is recommended to choose a nonstop flight to avoid getting
-      caught in a winter delay during a layover.
-      </p>
+      <h2 class="text-center">Air Travel</h2>
+      <p>{{ travel.airport_info }}</p>
     </div>
     <div class="col-sm-4 base-font text-justify">
-      <h2 class="text-center"> Hotels </h2>
+      <h2 class="text-center">Hotels</h2>
       <p>
-        Group rates have been negotiated at the following hotels, but don't feel 
-        restricted to these options, as there are many other fantastic hotels 
-        in the area.
+        Group rates have been negotiated at the following hotels, but don't feel restricted to these options, as there are many other fantastic hotels in the area.
       </p>
-      <h3 class="text-center text-muted">
-          Shade Hotel<br>
-          <small>Redondo Beach</small>
-      </h3>
-      <p>
-        <a href="https://www.yelp.com/biz/shade-hotel-redondo-beach-redondo-beach-2">Yelp Page</a><br>
-        Phone:    310.921.8940
-        <br><br>
-        Mention "Fang/Pipe-Mazo Wedding"
-        Discount: 10% off Best Available Rate
-        <br><br>
-        Upscale hotel on the water in Redondo Beach. Recommended for a relaxing
-        getaway weekend. The hotel's restaraunt, <a href="https://www.yelp.com/biz/sea-level-restaurant-and-lounge-redondo-beach-2?osq=Sea+Level">Sea Level</a>,
-        has a delicious and reasonably priced happy hour. For brunch, Jennifer 
-        recommends their "Corn Flake Crusted Stuffed French Toast" or "Burritos 
-        Divorciados."
-      </p>
-      <h3 class="text-center text-muted">
-        Holiday Inn Express<br>
-        <small>Hermosa Beach</small>
-      </h3>
-      <p>
-        <a href="https://www.yelp.com/biz/holiday-inn-express-and-suites-hermosa-beach-hermosa-beach-2?osq=holiday+inn+express">Yelp Page</a><br>
-        Phone:    310.798.9898.
-        <br><br>
-        Mention "Fang/Pipe-Mazo Wedding"<br>
-        Discount: $160/night negotiated rate for King or 2 Queen room
-        <br><br>
-        Includes parking, Wi-Fi, and breakfast. Hotel is walking distance to
-        the beach, King Harbor Marina, and Hermosa Beach Pier. Rooms reserved
-        for Saturday and Sunday nights, but rate is extensible to other nights
-        as well.
-        <br><br>
-        Hotel has heated pool, guest laundry, small gym, mini-fridges and
-        microwaves in the room.
-      </p>
+      {% for hotel in travel.hotels %}
+        <h3 class="text-center text-muted">
+            {{ hotel.name }}
+            <br>
+            <small>
+              {{ hotel.city }}
+              <br>
+              <a href={{ hotel.yelp_link }}>Yelp Page</a>
+            </small>
+        </h3>
+        <p>
+          <table cellpadding="100">
+            <tr>
+              <td class="hotel-td"><b>Phone</b></td>
+              <td class="hotel-td">{{ hotel.phone }}</td>
+            </tr>
+            <tr>
+              <td class="hotel-td"><b>Mention</b></td>
+              <td class="hotel-td">{{ hotel.mention }}</td>
+            </tr>
+            <tr>
+              <td class="hotel-td"><b>Discount</b></td>
+              <td class="hotel-td">{{ hotel.discount }}</td>
+            </tr>
+          </table>
+          <br>
+          {{ hotel.description }}
+        </p>
+      {% endfor %}
     </div>
     <div class="col-sm-4 base-font text-justify">
-      <h2 class="text-center"> AirBnB </h2>
+      <h2 class="text-center">AirBnB</h2>
       <p>
         AirBnB is also a great option for the area, as there are plenty of
         multi-bedroom homes available for rent over the weekend. Click
-        <a href="https://www.airbnb.com/s/Redondo-Beach--CA--United-States/homes?checkin=2018-02-16&checkout=2018-02-19&guests=4&adults=4&pets=false&allow_override%5B%5D=&ne_lat=33.84776844737407&ne_lng=-118.34920383568715&sw_lat=33.77620561393266&sw_lng=-118.42645145531606&zoom=13&search_by_map=true&room_types%5B%5D=Entire%20home%2Fapt&s_tag=5ywPUTue">here</a>
+        <a href={{ travel.airbnb_link }}>here</a>
         to see avilable homes for the weekend.
       </p>
     </div>

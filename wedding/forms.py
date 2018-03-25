@@ -4,6 +4,7 @@ from django.contrib.auth import password_validation
 from wedding.models import RSVP, RSVPPerson
 from django.forms import inlineformset_factory
 import re
+from wedding.wedsite import WEDSITE_JSON
 
 # Width of form fields
 FORM_FIELD_WIDTH = '64'
@@ -179,13 +180,14 @@ class RSVPForm(forms.ModelForm):
         """
         super(RSVPForm, self).__init__(*args, **kwargs)
         self.fields['comment'].required = False
-        self.fields['comment'].disabled = True
+        if not WEDSITE_JSON['rsvp']['active']:
+            self.fields['comment'].disabled = True
 
 # Formset for all RSVP Persons
 RSVPPersonFormSet = inlineformset_factory(RSVP, RSVPPerson,
     fields=(
         'name',
-        'is_attending_cny',
+        'is_attending_rehearsal',
         'is_attending_wedding',
         'is_child',
         'dietary_kosher',

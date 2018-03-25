@@ -12,50 +12,59 @@ Wedding
 
   <div class=row>
     <h1 class="wedding-text text-center">
-        Sunday, February 18, 2018
+        {{ ceremony.date|date:"l F j, Y"}}
     </h1>
   </div>
 
   <!-- Row with wedding map and venue info -->
   <div class="row">
     <div class="col-sm-4 text-justify">
-      <h2 class="text-center">La Venta Inn</h2>
+      <h2 class="text-center">{{ ceremony.location.name }}</h2>
+        <dt>Address</dt>
+          <dd style="margin-bottom:8px">
+            {{ ceremony.location.address }}<br>
+            {{ ceremony.location.city }}, {{ ceremony.location.state }} {{ ceremony.location.zip }}
+          </dd>
+        <br>
+        <dt>Directions</dt>
+          <dd style="margin-bottom:8px">
+            <a href={{ ceremony.location.maps_link }}>Maps Link</a><br>
+            {{ ceremony.location.parking }}
+          </dd>
+        <br>
         <p>
-          804 Vía Del Monte<br>
-          Palos Verdes Estates, CA 90274<br><br>
-          <a href="https://www.google.com/maps?saddr=My+Location&daddr=804+Vía+Del+Monte,+Palos+Verdes+Estates,+CA+90274">Directions</a><br>
-          Parking available on-site.<br><br>
-          <small>
-            Questions? Need help setting up a carpool? Please reach out to your 
-            point of contact, who can be found on the 
-            <a href="/contacts">Contacts</a> page.
-          </small>
+          Questions? Need help setting up a carpool? Please reach out to your point of contact, who can be found on the 
+          <a href="/contacts">Contacts</a> page.
         </p>
     </div>
     <div class="col-sm-4 text-justify">
-      <h2 class="text-center">Ceremony<br><small class="text-muted">4:00PM</small></h2>
+      <h2 class="text-center">Ceremony<br><small class="text-muted">{{ ceremony.date|date:"g:i A"}}</small></h2>
         <p>
-          <div class="text-center"><b>Please arrive no later than 3:45PM.</b></div><br>
-          <a href="https://www.thespruce.com/semi-formal-attire-guidelines-1216504">Semiformal Attire</a><br>
-          Please avoid outfits that are mostly red, white, or silver. See the 
-          <a href="/traditions">wedding traditions</a> page for details.<br><br>
-          Ceremony will begin promptly at 4PM. The ceremony will be held 
-          outdoors with ideal weather, otherwise indoors. Expect 65-70F and 
-          (hopefully) sunny weather.
+          <div class="text-center"><b>Please arrive no later than {{ ceremony.arrive_by|date:"g:i A"}}.</b></div>
+          <br>
+          <dt>Attire</dt>
+            <dd style="margin-bottom:8px">
+              {{ ceremony.attire }}
+            </dd>
+          <br>
+          <dt>Details</dt>
+            <dd style="margin-bottom:8px">
+              {{ ceremony.details }}
+            </dd>
         </p>
     </div>
     <div class="col-sm-4 text-justify">
-      <h2 class="text-center">Reception<br><small class="text-muted">Following Ceremony - 9:00PM</small></h2>
-      <p>
-          Cocktail hour during sunset<br><br>
-          We'll then move indoors for dinner, dancing, and other wedding-related festivities!
-      </p>
+      <h2 class="text-center">Reception<br><small class="text-muted">{{ reception.date|date:"g:i A"}} - {{ reception.time_end|date:"g:i A"}}</small></h2>
+      <dt>Details</dt>
+        <dd style="margin-bottom:8px">
+          {{ reception.details }}
+        </dd>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-12">
       <h2 class="text-center">Map</h2>
-      {% easy_map "804 Vía Del Monte, Palos Verdes Estates, CA 90274" 100 100 5 using 'wedding/blocks/responsive_map.html' %}
+      {% easy_map ceremony.location.map_address 100 100 5 using 'wedding/blocks/responsive_map.html' %}
     </div>
   </div>
 </div>

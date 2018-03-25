@@ -42,7 +42,7 @@ class RSVPPersonAdmin(admin.ModelAdmin):
     """
     RSVP Person Admin class
     """
-    list_display = ('name', 'rsvp', 'is_attending_cny', 'is_attending_wedding')
+    list_display = ('name', 'rsvp', 'is_attending_rehearsal', 'is_attending_wedding')
 
 # Hook them up to the admin UI
 admin.site.register(Profile, ProfileAdmin)

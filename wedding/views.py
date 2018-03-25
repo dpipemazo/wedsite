@@ -18,8 +18,22 @@ from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.debug import sensitive_post_parameters
 from django.http import HttpResponseRedirect
+from wedding.wedsite import WEDSITE_JSON
 
-class StaticView(View):
+class WedsiteView(View):
+    """
+    Wedsite view. Does pretty much the same thing as a regular view but makes
+    sure that the wedsite info gets passed along to the template
+    """
+
+    def render(self, request, template, json):
+        """
+        Render a page
+        """
+        template_json = { **json, **WEDSITE_JSON }
+        return render(request, template, template_json) 
+
+class StaticView(WedsiteView):
     """
     Basic static view. Shows a template back
     """
@@ -27,20 +41,20 @@ class StaticView(View):
 
     def get(self, request):
         if request.user.is_authenticated or (request.get_full_path() == reverse('index')):
-            return render(request, "wedding/pages/" + self.template, {})
+            return self.render(request, "wedding/pages/" + self.template, {})
         else:
             return redirect_to_login(request.get_full_path())
 
-class StaticViewNoAuth(View):
+class StaticViewNoAuth(WedsiteView):
     """
     Basic static view. Shows a template back
     """
     template = None
 
     def get(self, request):
-        return render(request, "wedding/pages/" + self.template, {})
+        return self.render(request, "wedding/pages/" + self.template, {})
 
-class RSVPView(View):
+class RSVPView(WedsiteView):
     """
     RSVP View. Will redirect to login page if the user isn't authenticated,
     otherwise will allow them to use the RSVP system
@@ -71,7 +85,7 @@ class RSVPView(View):
 
 
 
-            return render(request, 'wedding/pages/rsvp.html', {'formset': formset})
+            return self.render(request, 'wedding/pages/rsvp.html', {'formset': formset})
         else:
             return redirect_to_login(request.get_full_path())
 
@@ -82,13 +96,14 @@ class RSVPView(View):
             new_account = True if (request.GET.get('new_account', '') == 'y') else False
             formset = RSVPPersonFormSet(instance=rsvp, prefix='people') if rsvp else []
 
-            # Need to make the formset read-only since we locked the RSVPs
-            for form in formset:
-                for field in form.fields:
-                    form.fields[field].disabled = True
+            # Need to make the formset read-only since if locked the RSVPs
+            if not WEDSITE_JSON['rsvp']['active']:
+                for form in formset:
+                    for field in form.fields:
+                        form.fields[field].disabled = True
 
             rsvp_form = RSVPForm(instance=rsvp, prefix='rsvp') if rsvp else None
-            return render(request, 'wedding/pages/rsvp.html',
+            return self.render(request, 'wedding/pages/rsvp.html',
                 {
                     'formset': formset,
                     'rsvp_form': rsvp_form,

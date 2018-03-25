@@ -13,91 +13,34 @@ Contact
 
   <!-- Row with wedding map and venue info -->
   <div class="row flex-display">
-    <div class="col-sm-4 text-justify flex-col">
-      <h2 class="text-center">Ari Mazo<br>
-        <small class="text-muted">Best Man</small>
-      </h2>
-      <p>
-        Related to the groom or a family friend? Best Man Ari is here
-        to answer any questions that you may have!
-      </p>
-      <div class="contact-fill"></div>
-      <table>
-        <tr>
-          <td class="contact-item">
-            <b>email:</b>
-          </td>
-          <td>
-            apipemazo AT me DOT com
-          </td>
-        </tr>
-        <tr>
-          <td class="contact-item">
-            <b>phone:</b>
-          </td>
-          <td>
-            (508) - 685 - 5402
-          </td>
-        </tr>
-      </table>
-    </div>
-    <div class="col-sm-4 text-justify flex-col">
-      <h2 class="text-center">Steven Okai<br>
-        <small class="text-muted">Best Friend</small>
-      </h2>
-      <p>
-        Went to Caltech or attending the wedding with a Caltech alumnus?
-        Good guy Okai can help you find a ride to the Bay to LA, a place
-        to stay, or a carpool to the wedding.
-      </p>
-      <div class="contact-fill"></div>
-      <table>
-        <tr>
-          <td class="contact-item">
-            <b>email:</b>
-          </td>
-          <td>
-            sokai AT outlook DOT com
-          </td>
-        </tr>
-        <tr>
-          <td class="contact-item">
-            <b>phone:</b>
-          </td>
-          <td>
-            (808) - 203 - 0116
-          </td>
-        </tr>
-      </table>
-    </div>
-    <div class="col-sm-4 text-justify flex-col">
-      <h2 class="text-center">Lily Cordero<br>
-        <small class="text-muted">Maid of Honor</small>
-      </h2>
-      <p>
-        Went to school with the bride or don't recognize any of the
-        other names? Maid of Honor Lily can answer all your questions!
-      </p>
-      <div class="contact-fill"></div>
-      <table>
-        <tr>
-          <td class="contact-item">
-            <b>email:</b>
-          </td>
-          <td>
-            lily.e.cordero AT gmail DOT com
-          </td>
-        </tr>
-        <tr>
-          <td class="contact-item">
-            <b>phone:</b>
-          </td>
-          <td>
-            (510) - 205 - 3694
-          </td>
-        </tr>
-      </table>
-    </div>
+    {% for person in contact %}
+      <div class="col-sm-4 text-justify flex-col">
+        <h2 class="text-center">{{ person.name }}<br>
+          <small class="text-muted">{{ person.title }}</small>
+        </h2>
+        <p> {{ person.description }}
+        </p>
+        <div class="contact-fill"></div>
+        <table>
+          <tr>
+            <td class="contact-item">
+              <b>email:</b>
+            </td>
+            <td>
+              {{ person.email }}
+            </td>
+          </tr>
+          <tr>
+            <td class="contact-item">
+              <b>phone:</b>
+            </td>
+            <td>
+              {{ person.phone }}
+            </td>
+          </tr>
+        </table>
+      </div>
+    {% endfor %}
   </div>
 </div>
 {% endblock %}
