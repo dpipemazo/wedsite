@@ -1,6 +1,6 @@
 {
-  "name": "dpipemazo-wedsite",
-  "description": "Django Wedding Site by dpipemazo",
+  "name": "wedsite",
+  "description": "The easy-to-use open-source wedding website",
   "scripts": {
   },
   "env": {
