@@ -161,13 +161,18 @@ REHEARSAL_DINNER = {
 #
 WEDDING_CEREMONY = {
 	"date" : datetime.datetime(2018, 2, 18, 18, 00, 00), # Year, month, day, hour, minute, second
+	"arrive_by" : datetime.datetime(2018, 2, 18, 15, 45, 00),
+	"attire" : lorem.sentence(),
+	"details" : lorem.paragraph(),
 	"location" : {
 		"name" : "Some Venue",
-		"address" : "1234 Love Lane",
-		"city" : "Romanticville",
+		"address" : "274 Olive Walk",
+		"city" : "Pasadena",
 		"state" : "CA",
-		"zip" : "00000",
-		"maps_link" : "https://www.google.com/maps/place/Lloyd+House/@33.9745866,-118.3231545,11z/data=!4m8!1m2!2m1!1slloyd+house!3m4!1s0x80c2c4a868b87301:0x5857f9f8e8bb154b!8m2!3d34.1371511!4d-118.1228224"
+		"zip" : "91125",
+		"maps_link" : "https://www.google.com/maps/place/Lloyd+House/@33.9745866,-118.3231545,11z/data=!4m8!1m2!2m1!1slloyd+house!3m4!1s0x80c2c4a868b87301:0x5857f9f8e8bb154b!8m2!3d34.1371511!4d-118.1228224",
+		"map_address" : "274 Olive Walk Pasadena, CA 91125", #Yes, this is the same as the regular address. Had trouble making the easy map work. Need to look into it
+		"parking" : lorem.sentence(),
 	},
 	"additional info" : "None",
 }
@@ -177,6 +182,8 @@ WEDDING_CEREMONY = {
 #
 WEDDING_RECEPTION = {
 	"date" : datetime.datetime(2018, 2, 18, 18, 00, 00), # Year, month, day, hour, minute, second
+	"time_end" : datetime.datetime(2018, 2, 19, 00, 00, 00),
+	"details" : lorem.paragraph(),
 	"location" : {
 		"name" : "Perhaps the same venue, perhaps not",
 		"address" : "1234 Party Place",
