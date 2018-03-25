@@ -148,7 +148,7 @@ REHEARSAL_DINNER = {
 WEDDING_CEREMONY = {
 	"date" : datetime.datetime(2018, 2, 18, 18, 00, 00), # Year, month, day, hour, minute, second
 	"location" : {
-		"name" : "Some Religious or Non-Religious Venue",
+		"name" : "Some Venue",
 		"address" : "1234 Love Lane",
 		"city" : "Romantic",
 		"state" : "CA",
@@ -228,6 +228,11 @@ GIFT_OPTION_3 = {
 }
 
 #
+# Main Page Info
+#
+LANDING_IMAGE = "images/landing_image_date.jpg"
+
+#
 # Object that's fed into the templates
 #
 
@@ -253,4 +258,5 @@ WEDSITE_JSON = {
 		GIFT_OPTION_2,
 		GIFT_OPTION_3
 	),
+	"landing_image" : LANDING_IMAGE
 }

@@ -3,12 +3,12 @@
 {% load static %}
 
 {% block title %}
-I&#x2764U
+{{gride.first_initial}}&#x2764;{{broom.first_initial}}
 {% endblock %}
 
 {% block style %}
   .main_jumbotron {
-      background-image: url({% static 'images/landing_image_date.jpg' %});
+      background-image: url({% static landing_image %});
       background-size: cover;
       background-position: top; /* Centers - top to avoid head chop-off */
       height: 100vh;
@@ -21,15 +21,16 @@ I&#x2764U
 <div class="main_jumbotron jumbotron">
   <div class="container-fluid text-center">
     <h1 class="main-header-text">
-      Jennifer Fang<br>
-      <span class="glyphicon glyphicon-heart"
-        style="font-size:6vmin"></span><br>
-      Dan Pipe-Mazo
+      {{ gride.first_name }} {{ gride.last_name }}
+        <br>
+      <span class="glyphicon glyphicon-heart" style="font-size:6vmin"></span>
+        <br>
+      {{ broom.first_name }} {{ broom.last_name }}
     </h1>
     <p class="venue-date-text">
-    02 · 18 · 18
+    {{ ceremony.date|date:"m "}} · {{ ceremony.date|date:"d" }} · {{ ceremony.date|date:"y" }}
     </br>
-    La Venta Inn, Palos Verdes, CA
+    {{ ceremony.location.name }} - {{ ceremony.location.city }} - {{ ceremony.location.state }}
     </p>
   </div>
 </div>
