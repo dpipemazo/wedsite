@@ -185,7 +185,7 @@ class RSVPForm(forms.ModelForm):
 RSVPPersonFormSet = inlineformset_factory(RSVP, RSVPPerson,
     fields=(
         'name',
-        'is_attending_cny',
+        'is_attending_rehearsal',
         'is_attending_wedding',
         'is_child',
         'dietary_kosher',

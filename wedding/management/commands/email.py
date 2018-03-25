@@ -26,7 +26,7 @@ class Command(BaseCommand):
 
         people = self.get_rsvp_persons(user)
         for person in people:
-            if person.is_attending_cny:
+            if person.is_attending_rehearsal:
                 result.append(person)
 
         return result

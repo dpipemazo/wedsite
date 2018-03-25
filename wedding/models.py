@@ -103,9 +103,9 @@ class RSVPPerson(models.Model):
         help_text="RSVP Person's name")
 
     # Person's event attendance status
-    is_attending_cny = models.NullBooleanField(
+    is_attending_rehearsal = models.NullBooleanField(
         default=None,
-        help_text="RSVP Status for Friday Night CNY/Shabbat Dinner")
+        help_text="RSVP Status for Rehearsal Dinner")
     is_attending_wedding = models.NullBooleanField(
         default=None,
         help_text="RSVP Status for Sunday Wedding Ceremony & Reception")
