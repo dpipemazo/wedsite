@@ -11,44 +11,70 @@ Weekend Events
 
   <!-- Row with wedding map and venue info -->
   <div class="row">
-    <div class="col-sm-4 text-justify">
-      <h2 class="text-center">
-        Friday, 2/16<br>
-        <small class="text-muted">Shabbat/Chinese New Year</small>
-      </h2>
-      <p>
-        We'll be gathering at 7:00PM at:<br><br>
-        <b>Empress Harbor Restaurant</b><br>
-        111 N Atlantic Blvd #350<br>Monterey Park, CA 91754<br>
-        <a href=https://www.google.com/maps/place/Empress+Harbor+Restaurant/@34.0629425,-118.136659,17z/data=!3m1!4b1!4m5!3m4!1s0x80c2c55d6a1b9aa3:0x504f163410e84e1a!8m2!3d34.0629381!4d-118.1344703>Google Maps</a><br><br>
 
-        We'll celebrate <a href="https://en.wikipedia.org/wiki/Shabbat">shabbat</a>, <a href="https://en.wikipedia.org/wiki/Chinese_New_Year">Chinese New Year (春节)</a>, and family. All who are in town are welcome to attend. Parking is free in the structure beneath the restaurant. After parking, take the escalators up to the third floor.
+    <!-- Rehearsal Dinner -->
+    <div class="col-sm-4 text-justify">
+      <h2 class="text-center">
+        {{ rehearsal.date|date:"l, n/d" }}
+        <br>
+        <small class="text-muted">Rehearsal Dinner</small>
+      </h2>
+      <p>
+        We'll be gathering at {{ rehearsal.date|date:"g:i A"}} at:
         <br><br>
-        After dinner (around 8:30PM) we will walk a few shops down to get boba at:<br><br>
-        <b>Half and Half Tea House</b><br>
-        141 N Atlantic Blvd #112<br>Monterey Park, CA 91754<br>
-        <a href="https://www.google.com/maps/place/Half+%26+Half+Tea+House+MP/@34.0636102,-118.1367197,17z/data=!3m1!4b1!4m5!3m4!1s0x80c2c55d72b7cc0d:0x2bf98171d1195ecd!8m2!3d34.0636058!4d-118.134531">Google Maps</a> 
+        <b>{{ rehearsal.location.name }}</b>
+        <br>
+        {{ rehearsal.location.address }}
+        <br>{{ rehearsal.location.city }}, {{ rehearsal.location.state }} {{ rehearsal.location.zip }}
+        <br>
+        <a href={{ rehearsal.location.maps_link }}>Map Link</a>
+        <br><br>
+        {{ rehearsal.additional_info }}
       </p>
     </div>
+
+    <!-- Wedding Ceremony -->
     <div class="col-sm-4 text-justify">
       <h2 class="text-center">
-        Saturday, 2/17<br>
-        <small class="text-muted">~</small>
+        {{ ceremony.date|date:"l, n/d" }}
+        <br>
+        <small class="text-muted">Wedding Ceremony</small>
       </h2>
       <p>
-        No wedding activities scheduled, so please enjoy your three-day weekend 
-        and <a href="/explore">explore LA!</a>
+        We'll be gathering at {{ ceremony.date|date:"g:i A"}} at:
+        <br><br>
+        <b>{{ ceremony.location.name }}</b>
+        <br>
+        {{ ceremony.location.address }}
+        <br>{{ ceremony.location.city }}, {{ ceremony.location.state }} {{ ceremony.location.zip }}
+        <br>
+        <a href={{ ceremony.location.maps_link }}>Map Link</a>
+        <br><br>
+        {{ ceremony.additional_info }}
       </p>
     </div>
+
+    <!-- Wedding Reception -->
     <div class="col-sm-4 text-justify">
       <h2 class="text-center">
-        Sunday, 2/18<br>
-        <small class="text-muted">Wedding Day!</small>
+        {{ reception.date|date:"l, n/d" }}
+        <br>
+        <small class="text-muted">Wedding Reception</small>
       </h2>
       <p>
-        Ceremony will begin promptly at 4:00PM. Please arrive no later than 3:45PM. Parking provided on-site. Details can be found on the <a href="/wedding">Ceremony & Reception</a> page.
+        We'll be gathering at {{ reception.date|date:"g:i A"}} at:
+        <br><br>
+        <b>{{ reception.location.name }}</b>
+        <br>
+        {{ reception.location.address }}
+        <br>{{ reception.location.city }}, {{ reception.location.state }} {{ reception.location.zip }}
+        <br>
+        <a href={{ reception.location.maps_link }}>Map Link</a>
+        <br><br>
+        {{ reception.additional_info }}
       </p>
     </div>
+    
   </div>
 </div>
 {% endblock %}

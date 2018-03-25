@@ -9,6 +9,7 @@ much other than change this configuration file.
 For the sake of gender-neutrality we'll call the two people
 getting married Gride and Broom.
 """
+import datetime
 
 #
 # Gride and Broom
@@ -124,6 +125,54 @@ POINTS_OF_CONTACT = (
 	},
 )
 
+#
+#  Rehearsal Dinner info.
+#
+REHEARSAL_DINNER = {
+	"date" : datetime.datetime(2018, 2, 18, 18, 00, 00), # Year, month, day, hour, minute, second
+	"location" : {
+		"name" : "Some Restaurant",
+		"address" : "1234 Tasty Trail",
+		"city" : "Flavortown",
+		"state" : "CA",
+		"zip" : "00000",
+		"maps_link" : "https://www.google.com/maps/place/Lloyd+House/@33.9745866,-118.3231545,11z/data=!4m8!1m2!2m1!1slloyd+house!3m4!1s0x80c2c4a868b87301:0x5857f9f8e8bb154b!8m2!3d34.1371511!4d-118.1228224"
+	},
+	"additional info" : "None",
+}
+
+#
+# Wedding Ceremony Info
+#
+WEDDING_CEREMONY = {
+	"date" : datetime.datetime(2018, 2, 18, 18, 00, 00), # Year, month, day, hour, minute, second
+	"location" : {
+		"name" : "Some Religious or Non-Religious Venue",
+		"address" : "1234 Love Lane",
+		"city" : "Romantic",
+		"state" : "CA",
+		"zip" : "00000",
+		"maps_link" : "https://www.google.com/maps/place/Lloyd+House/@33.9745866,-118.3231545,11z/data=!4m8!1m2!2m1!1slloyd+house!3m4!1s0x80c2c4a868b87301:0x5857f9f8e8bb154b!8m2!3d34.1371511!4d-118.1228224"
+	},
+	"additional info" : "None",
+}
+
+#
+# Reception Info
+#
+WEDDING_RECEPTION = {
+	"date" : datetime.datetime(2018, 2, 18, 18, 00, 00), # Year, month, day, hour, minute, second
+	"location" : {
+		"name" : "Perhaps the same venue, perhaps not",
+		"address" : "1234 Party Place",
+		"city" : "Funtime",
+		"state" : "CA",
+		"zip" : "00000",
+		"maps_link" : "https://www.google.com/maps/place/Lloyd+House/@33.9745866,-118.3231545,11z/data=!4m8!1m2!2m1!1slloyd+house!3m4!1s0x80c2c4a868b87301:0x5857f9f8e8bb154b!8m2!3d34.1371511!4d-118.1228224"
+	},
+	"additional info" : "None",
+}
+
 
 #
 # Object that's fed into the templates
@@ -135,4 +184,7 @@ WEDSITE_JSON = {
 	"gridesmaids" : GRIDESMAIDS,
 	"broomemen" : BROOMSMEN,
 	"contact" : POINTS_OF_CONTACT,
+	"rehearsal" : REHEARSAL_DINNER,
+	"ceremony" : WEDDING_CEREMONY,
+	"reception" : WEDDING_RECEPTION
 }
