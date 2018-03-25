@@ -10,6 +10,7 @@ For the sake of gender-neutrality we'll call the two people
 getting married Gride and Broom.
 """
 import datetime
+import lorem
 
 #
 # Gride and Broom
@@ -173,6 +174,28 @@ WEDDING_RECEPTION = {
 	"additional info" : "None",
 }
 
+#
+# Explore Info. This section should be a bit lengthier since you're
+#	giving guests ideas about how to spend their time for parts of the
+#	weekend you haven't directly scheduled.
+#
+EXPLORE_AREA_1 = {
+	"name" : "The South Bay",
+	"map_address" : "South Bay, Los Angeles County, CA",
+	"description" : lorem.paragraph(),
+}
+
+EXPLORE_AREA_2 = {
+	"name" : "Downtown",
+	"map_address" : "111 S Grand Ave, Los Angeles, CA 90012",
+	"description" : lorem.paragraph(),
+}
+
+EXPLORE_AREA_3 = {
+	"name" : "Westside",
+	"map_address" : "Westside, Los Angeles, CA",
+	"description" : lorem.paragraph(),
+}
 
 #
 # Object that's fed into the templates
@@ -186,5 +209,10 @@ WEDSITE_JSON = {
 	"contact" : POINTS_OF_CONTACT,
 	"rehearsal" : REHEARSAL_DINNER,
 	"ceremony" : WEDDING_CEREMONY,
-	"reception" : WEDDING_RECEPTION
+	"reception" : WEDDING_RECEPTION,
+	"explore" : (
+		EXPLORE_AREA_1,
+		EXPLORE_AREA_2,
+		EXPLORE_AREA_3
+	),
 }
