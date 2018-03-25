@@ -37,6 +37,9 @@ BROOM = {
 # Additional Wedding People.
 #
 
+# What we're calling the gridesmaids on the site
+GRIDESMAIDS_TEXT = "Gridesmaids"
+
 # List of all Gridesmaids
 GRIDESMAIDS = (
 	{
@@ -44,6 +47,7 @@ GRIDESMAIDS = (
 		"name" : "Important Person",
 		"email" : "some_email@wedsite.io",
 		"phone" : "(626)-395-1712",
+		"static_img" : "images/team_photos/ari_mazo.jpg",
 	},
 
 	{
@@ -51,6 +55,7 @@ GRIDESMAIDS = (
 		"name" : "Slightly Less Important Person",
 		"email" : "some_email@wedsite.io",
 		"phone" : "(626)-395-1712",
+		"static_img" : "images/team_photos/ari_mazo.jpg",
 	},
 
 	{
@@ -58,6 +63,7 @@ GRIDESMAIDS = (
 		"name" : "Slightly Less Important Person",
 		"email" : "some_email@wedsite.io",
 		"phone" : "(626)-395-1712",
+		"static_img" : "images/team_photos/ari_mazo.jpg",
 	},
 
 	{
@@ -65,8 +71,12 @@ GRIDESMAIDS = (
 		"name" : "Slightly Less Important Person",
 		"email" : "some_email@wedsite.io",
 		"phone" : "(626)-395-1712",
+		"static_img" : "images/team_photos/ari_mazo.jpg",
 	},
 )
+
+# What we're calling the broomsmen on the site
+BROOMSMEN_TEXT = "Broomsmen"
 
 # List of all Broomsmen
 BROOMSMEN = (
@@ -74,28 +84,32 @@ BROOMSMEN = (
 	    "title" : "Best Person",
 		"name" : "Important Person",
 		"email" : "some_email@wedsite.io",
-		"phone" : "(626)-395-1712"
+		"phone" : "(626)-395-1712",
+		"static_img" : "images/team_photos/ari_mazo.jpg"
 	},
 
 	{
 	    "title" : "Broomsman",
 		"name" : "Slightly Less Important Person",
 		"email" : "some_email@wedsite.io",
-		"phone" : "(626)-395-1712"
+		"phone" : "(626)-395-1712",
+		"static_img" : "images/team_photos/ari_mazo.jpg"
 	},
 
 	{
 	    "title" : "Broomsman",
 		"name" : "Slightly Less Important Person",
 		"email" : "some_email@wedsite.io",
-		"phone" : "(626)-395-1712"
+		"phone" : "(626)-395-1712",
+		"static_img" : "images/team_photos/ari_mazo.jpg"
 	},
 
 	{
 	    "title" : "Broomsman",
 		"name" : "Slightly Less Important Person",
 		"email" : "some_email@wedsite.io",
-		"phone" : "(626)-395-1712"
+		"phone" : "(626)-395-1712",
+		"static_img" : "images/team_photos/ari_mazo.jpg"
 	},
 )
 
@@ -284,14 +298,35 @@ STORY_ITEMS = (
 )
 
 #
+# Credits for the team page
+#
+CREDITS_ITEMS = (
+	{
+		"name" : "Awesome Friend 1",
+		"item" : "Thing awesome friend 1 did",
+	},
+
+	{
+		"name" : "Awesome Friend 2",
+		"item" : "Thing awesome friend 2 did",
+	},
+)
+
+#
 # Top-level Object that's fed into the templates
 #
 
 WEDSITE_JSON = {
 	"gride" : GRIDE,
 	"broom" : BROOM,
-	"gridesmaids" : GRIDESMAIDS,
-	"broomemen" : BROOMSMEN,
+	"gridesmaids" : {
+		"text" : GRIDESMAIDS_TEXT,
+		"team" : GRIDESMAIDS,
+	},
+	"broomsmen" : {
+		"text" : BROOMSMEN_TEXT,
+		"team" : BROOMSMEN,
+	},
 	"contact" : POINTS_OF_CONTACT,
 	"rehearsal" : REHEARSAL_DINNER,
 	"ceremony" : WEDDING_CEREMONY,
@@ -312,4 +347,5 @@ WEDSITE_JSON = {
 		"meal_description" : MEAL_DESCRIPTION,
 	},
 	"story" : STORY_ITEMS,
+	"credits" : CREDITS_ITEMS,
 }
