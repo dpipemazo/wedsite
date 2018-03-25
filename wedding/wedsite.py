@@ -313,6 +313,46 @@ CREDITS_ITEMS = (
 )
 
 #
+# Traditions page. Explanation of various cultures' traditions
+#
+TRADITIONS_ITEMS = (
+	{
+		"name" : "Culture 1 Traditions",
+		"items" : (
+			{
+				"name" : "item 1",
+				"description" : lorem.paragraph(),
+			},
+			{
+				"name" : "item 2",
+				"description" : lorem.paragraph(),
+			},
+			{
+				"name" : "item 3",
+				"description" : lorem.paragraph(),
+			},
+		),
+	},
+	{
+		"name" : "Culture 2 Traditions",
+		"items" : (
+			{
+				"name" : "item 1",
+				"description" : lorem.paragraph(),
+			},
+			{
+				"name" : "item 2",
+				"description" : lorem.paragraph(),
+			},
+			{
+				"name" : "item 3",
+				"description" : lorem.paragraph(),
+			},
+		),
+	},
+)
+
+#
 # Top-level Object that's fed into the templates
 #
 
@@ -348,4 +388,5 @@ WEDSITE_JSON = {
 	},
 	"story" : STORY_ITEMS,
 	"credits" : CREDITS_ITEMS,
+	"traditions" : TRADITIONS_ITEMS,
 }
