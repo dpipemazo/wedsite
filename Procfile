@@ -1,1 +1,1 @@
-web: gunicorn vivsaidyes.wsgi --log-file -
+web: gunicorn wedsite.wsgi --log-file -

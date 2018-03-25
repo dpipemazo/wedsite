@@ -126,9 +126,9 @@ Rename the jennanddan directory and related references to your own cute name:
 ```
 $ export WEDDING=mycuteweddingname
 $ git mv jennanddan $WEDDING
-$ sed -i "s/jennanddan/$WEDDING/g" manage.py Procfile $WEDDING/wsgi.py $WEDDING/urls.py
-$ sed -i "s/jennanddan.wsgi/$WEDDING.wsgi/g" $WEDDING/settings.py
-$ sed -i "s/jennanddan.urls/$WEDDING.urls/g" $WEDDING/settings.py
+$ sed -i "s/wedsite/$WEDDING/g" manage.py Procfile $WEDDING/wsgi.py $WEDDING/urls.py
+$ sed -i "s/wedsite.wsgi/$WEDDING.wsgi/g" $WEDDING/settings.py
+$ sed -i "s/wedsite.urls/$WEDDING.urls/g" $WEDDING/settings.py
 ```
 
 ### External API Dependencies

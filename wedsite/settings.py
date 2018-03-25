@@ -63,7 +63,7 @@ MIDDLEWARE = [
     'tz_detect.middleware.TimezoneMiddleware',
 ]
 
-ROOT_URLCONF = 'vivsaidyes.urls'
+ROOT_URLCONF = 'wedsite.urls'
 
 TEMPLATES = [
     {
@@ -82,7 +82,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'vivsaidyes.wsgi.application'
+WSGI_APPLICATION = 'wedsite.wsgi.application'
 
 
 # Database
