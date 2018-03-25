@@ -30,7 +30,8 @@ ALLOWED_HOSTS = [
     '.herokuapp.com',
     'wedsite.io',
     'www.wedsite.io',
-    'localhost']
+    'localhost',
+    '0.0.0.0']
 
 # Change out authentication backend to case-inesnsitive one for users.
 AUTHENTICATION_BACKENDS = ('wedding.backends.CaseInsensitiveModelBackend', )
