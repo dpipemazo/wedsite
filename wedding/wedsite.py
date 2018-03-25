@@ -200,6 +200,34 @@ EXPLORE_AREA_3 = {
 }
 
 #
+# Gifts Info. This will change a lot based on what you're looking for
+#	out of your gifts page. There are three example gift options below,
+#	and you can have as many or few of them as you'd like of any type
+#	in any order.
+#
+GIFT_OPTION_1 = {
+	"name" : "Cultural Tradition",
+	"description" : lorem.paragraph(),
+}
+
+GIFT_OPTION_2 = {
+	"name" : "Registry",
+	"description" : lorem.paragraph(),
+	"image" : {
+		"hyperlink" : "https://wedsite.io",
+		"static_img" : "images/amazon_smile.png"
+	}
+}
+
+GIFT_OPTION_3 = {
+	"name" : "Donations",
+	"description" : lorem.paragraph(),
+	"video" : {
+		"hyperlink" : "https://www.youtube.com/embed/1AnfQcqMRlw"
+	}
+}
+
+#
 # Object that's fed into the templates
 #
 
@@ -220,5 +248,9 @@ WEDSITE_JSON = {
 			EXPLORE_AREA_3
 		),
 	},
-
+	"gifts" : (
+		GIFT_OPTION_1,
+		GIFT_OPTION_2,
+		GIFT_OPTION_3
+	),
 }
