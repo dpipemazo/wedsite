@@ -6,6 +6,9 @@ CUSTOMIZED_JSON = DEFAULT_JSON
 #	see the Broom's last name changed to "Pandas"
 #CUSTOMIZED_JSON['broom']['last_name'] = "Pandas"
 
+# Override the favicon
+CUSTOMIZED_JSON['favicon'] = "best-favicon-ever.ico"
+
 CUSTOMIZED_ACCESS = DEFAULT_ACCESS
 
 # Example of how to set access restrictions on certain pages
