@@ -1,4 +1,4 @@
-from wedsite.settings import (DEFAULT_JSON, DEFAULT_ACCESS)
+from wedsite.settings import (DEFAULT_JSON)
 
 CUSTOMIZED_JSON = DEFAULT_JSON
 
@@ -9,9 +9,7 @@ CUSTOMIZED_JSON = DEFAULT_JSON
 # Override the favicon
 CUSTOMIZED_JSON['favicon'] = "best-favicon-ever.ico"
 
-CUSTOMIZED_ACCESS = DEFAULT_ACCESS
-
 # Example of how to set access restrictions on certain pages
 #	of the site.. Uncomment to be barred from viewing the team
 #	page unless logged in.
-#CUSTOMIZED_ACCESS['team'] = False
+#CUSTOMIZED_JSON['access']['team'] = False
