@@ -12,4 +12,4 @@ CUSTOMIZED_JSON['favicon'] = "best-favicon-ever.ico"
 # Example of how to set access restrictions on certain pages
 #	of the site.. Uncomment to be barred from viewing the team
 #	page unless logged in.
-CUSTOMIZED_JSON['access']['team'] = False
+#CUSTOMIZED_JSON['access']['team'] = False
